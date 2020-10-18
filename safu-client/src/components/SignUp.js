@@ -1,5 +1,5 @@
 //Signup.js - state에 따라 or 라우팅에 따라) 변경되는 부분: x
-<<<<<<< HEAD
+
 import React from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
@@ -13,7 +13,6 @@ class SignUp extends React.Component {
       password: '',
       passwordCheck: '',
       githubId: '',
-
       isAvailedEmail: '',
       isAvailedPassword: '',
       isAvailedPasswordCheck: '',
@@ -39,7 +38,6 @@ class SignUp extends React.Component {
         }
       }
     }
-
     if (key === 'password') {
       var reg = /^(?=.*?[a-z])(?=.*?[0-9]).{8,}$/;
       var password = e.target.value;
@@ -52,7 +50,6 @@ class SignUp extends React.Component {
         this.setState({ [key]: e.target.value });
       }
     }
-
     if (key === 'passwordCheck') {
       var passwordCheck = e.target.value;
       if (passwordCheck.length > 0 && this.state.password !== passwordCheck) {
@@ -62,12 +59,10 @@ class SignUp extends React.Component {
         this.setState({ [key]: e.target.value });
       }
     }
-
     if (key === 'githubId') {
       this.setState({ [key]: e.target.value });
     }
   };
-
   handleLoginButton = () => {
     axios({
       method: 'post',
@@ -88,7 +83,6 @@ class SignUp extends React.Component {
         console.error(err);
       });
   };
-
   render() {
     const { history } = this.props;
     return (
@@ -142,8 +136,5 @@ class SignUp extends React.Component {
     );
   }
 }
-
 // export default withRouter(SignUp);
 export default SignUp;
-=======
->>>>>>> 0b66129378dcd1c14cec7b7fc31e25bed06571ce
