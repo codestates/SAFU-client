@@ -1,4 +1,5 @@
 //Signup.js - state에 따라 or 라우팅에 따라) 변경되는 부분: x
+<<<<<<< HEAD
 import React from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
@@ -144,3 +145,5 @@ class SignUp extends React.Component {
 
 // export default withRouter(SignUp);
 export default SignUp;
+=======
+>>>>>>> 0b66129378dcd1c14cec7b7fc31e25bed06571ce
