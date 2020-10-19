@@ -3,13 +3,13 @@
 import React from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
-import { fakeUsersData } from './__test__/fakeUsersData';
+import { fakeUsersData } from '../__test__/fakeUsersData';
 
 class SignUp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
+      useremail: '',
       password: '',
       passwordCheck: '',
       githubId: '',
@@ -19,16 +19,14 @@ class SignUp extends React.Component {
     };
   }
   handleSignUpValue = (key) => (e) => {
-    if (key === 'email') {
+    if (key === 'useremail') {
       var emailreg = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-      var email = e.target.value;
-      if (email.length > 0 && false === emailreg.test(email)) {
+      var useremail = e.target.value;
+      if (useremail.length > 0 && false === emailreg.test(useremail)) {
         this.setState({ isAvailedEmail: '올바른 이메일 형식이 아닙니다.' });
       } else {
         for (let userInfo of fakeUsersData) {
-          console.log(userInfo);
-          if (userInfo.email === email) {
-            console.log(userInfo.email);
+          if (userInfo.useremail === useremail) {
             this.setState({ isAvailedEmail: '이미 존재하는 email입니다.' });
             break;
           } else {
@@ -66,17 +64,16 @@ class SignUp extends React.Component {
   handleLoginButton = () => {
     axios({
       method: 'post',
-      url: 'http://localhost/user/signup',
+      url: 'http://localhost:4000/users/signup',
       data: {
-        email: this.state.email,
+        useremail: this.state.useremail,
         password: this.state.password,
         githubId: this.state.githubId,
       },
     })
       .then((res) => {
         //200(OK), 201(Created)
-        console.log('SignUp res: ', res);
-        //history.pushState('/reviews');
+        this.props.history.push('/users/login');
       })
       .catch((err) => {
         //500(err)
@@ -89,15 +86,18 @@ class SignUp extends React.Component {
       <div>
         <ul>
           <li>
-            <label htmlFor="email">
-              email
-              <input type="email" onChange={this.handleSignUpValue('email').bind(this)}></input>
+            <label htmlFor="useremail">
+              <div>email</div>
+              <input
+                type="useremail"
+                onChange={this.handleSignUpValue('useremail').bind(this)}
+              ></input>
               <div>{this.state.isAvailedEmail}</div>
             </label>
           </li>
           <li>
             <label htmlFor="password">
-              pw
+              <div>password</div>
               <input
                 type="password"
                 onChange={this.handleSignUpValue('password').bind(this)}
@@ -110,31 +110,32 @@ class SignUp extends React.Component {
               htmlFor="password check"
               onChange={this.handleSignUpValue('passwordCheck').bind(this)}
             >
-              pw 확인
+              <div>password 확인</div>
               <input type="password"></input>
               <div>{this.state.isAvailedPasswordCheck}</div>
             </label>
           </li>
           <li>
             <label htmlFor="Github ID" onChange={this.handleSignUpValue('githubId').bind(this)}>
-              Github ID
+              <div>Github ID (for identification)</div>
               <input></input>
             </label>
           </li>
         </ul>
-        {/* <button onClick={this.handleLoginButton().bind(this)}>제출하기</button> */}
-        <button
-          onClick={(e) => {
-            // console.log(this.state);
-            e.preventDefault();
-            this.handleLoginButton.bind(this);
-          }}
-        >
-          제출하기
-        </button>
+        <div>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              this.handleLoginButton.bind(this);
+            }}
+          >
+            Submit
+          </button>
+        </div>
       </div>
     );
   }
 }
+
 // export default withRouter(SignUp);
 export default SignUp;
