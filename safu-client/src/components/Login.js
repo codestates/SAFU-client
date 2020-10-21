@@ -2,7 +2,7 @@
 
 import React from 'react';
 import axios from 'axios';
-import { fakeUsersData } from './__test__/FakeUsersData';
+import { withRouter } from 'react-router-dom';
 
 const safuID = process.env.GITHUB_CLIENT_ID; //등록 후 결정
 const safuSecret = process.env.GITHUB_CLIENT_SECRET; // 등록 후 결정
@@ -14,19 +14,18 @@ class Login extends React.Component {
     this.state = {
       useremail: '',
       password: '',
+      isLoginMessage: false,
     };
   }
 
   handleLoginValue = (key) => (e) => {
-    //입력 값으로 state변경 이벤트
     this.setState({ [key]: e.target.value });
   };
 
   handleLoginButton = () => {
-    //axios post 요청 이벤트
     axios({
       method: 'post',
-      url: 'http://localhost/user/login',
+      url: 'http://localhost:4000/users/login',
       data: {
         useremail: this.state.useremail,
         password: this.state.password,
@@ -34,18 +33,17 @@ class Login extends React.Component {
     })
       .then((res) => {
         //status 가 200이면,
+        this.setState({ isLoginMessage: true });
         // logged main page로 redirect
         // App.js의 isLogin state를 state끌어올리기로 변경해주고나서,
-        // history.pushState('/reviews')
+        // this.props.history.push('/reviews')
       })
       .catch((err) => {
-        // if(  ){
-        //status가 401이면 unauthorized error
-        //'That account doesn't existt. Enter a different account or get a new one'띄위기
-        // }
-        // else{
-        //status code가 500이면 server error
-        // }
+        //status가 401이면
+        if (err.message === 'Request failed with status code 401') {
+          this.setState({ isLoginMessage: false });
+        }
+        //그게 아니면 서버에러
       });
   };
 
@@ -55,15 +53,24 @@ class Login extends React.Component {
         <ul>
           <li>
             <span>email</span>
-            <input type="email" onChange={this.handleLoginValue('useremail').bind(this)}></input>
+            <input type="email" onChange={this.handleLoginValue('useremail')}></input>
           </li>
           <li>
             <span>password</span>
-            <input type="password" onChange={this.handleLoginValue('password').bind(this)}></input>
+            <input type="password" onChange={this.handleLoginValue('password')}></input>
           </li>
         </ul>
         <div>
-          <button>Log in</button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              {
+                this.handleLoginButton();
+              }
+            }}
+          >
+            Log in
+          </button>
         </div>
         <div>
           <a
@@ -82,7 +89,16 @@ class Login extends React.Component {
           <button>Find PW</button>
         </div>
         <div>
-          <span>회원이 아니신가요?</span> <button>Sign up</button>
+          {this.state.isLoginMessage === false ? (
+            <div>
+              <span> 회원이 아니신가요?</span>
+              <button>Sign up</button>
+            </div>
+          ) : (
+            <div>
+              <span> 로그인 되었습니다 !</span>
+            </div>
+          )}
         </div>
       </div>
     );
