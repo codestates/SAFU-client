@@ -4,6 +4,8 @@ import React from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 
+axios.defaults.withCredentials = true;
+
 const safuID = process.env.GITHUB_CLIENT_ID; //등록 후 결정
 const safuSecret = process.env.GITHUB_CLIENT_SECRET; // 등록 후 결정
 const redirectUri = 'http://localhost'; //등록 후 결정
