@@ -71,24 +71,32 @@ class SignUp extends React.Component {
     }
   };
   handleSignUpButton = () => {
-    axios({
-      method: 'post',
-      url: 'http://localhost:4000/users/signup',
-      data: {
-        useremail: this.state.useremail,
-        password: this.state.password,
-        githubId: this.state.githubId,
-      },
-    })
-      .then((res) => {
-        //200(OK), 201(Created)
-        // this.props.history.push('/users/login');
-        console.log('회원가입 완료');
+    if (
+      this.state.isAvailedEmail === '' &&
+      this.state.isAvailedPassword === '' &&
+      this.state.isAvailedPasswordCheck === ''
+    ) {
+      axios({
+        method: 'post',
+        url: 'http://localhost:4000/users/signup',
+        data: {
+          useremail: this.state.useremail,
+          password: this.state.password,
+          githubId: this.state.githubId,
+        },
       })
-      .catch((err) => {
-        //500(err)
-        console.error(err);
-      });
+        .then((res) => {
+          //200(OK), 201(Created)
+          // this.props.history.push('/users/login');
+          console.log('회원가입 완료');
+        })
+        .catch((err) => {
+          //500(err)
+          console.error(err);
+        });
+    } else {
+      alert('필수조건을 만족해 주셔야 합니다.');
+    }
   };
   render() {
     const { history } = this.props;
