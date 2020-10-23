@@ -3,7 +3,7 @@ import React from "react";
 
 const Card = ({ card }) => (
   <div className="card-list-entry">
-    <div className="card">
+    <div className={card.bootcampname.name + " " + "card"}>
       <ul className="title">
         <li>
           <p>{card.bootcampname.name}</p>

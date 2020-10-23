@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Nav from "./components/Nav";
-// import Menu from "./components/Menu";
+import Menu from "./components/Menu";
 import CardList from "./components/CardList";
 
 import axios from "axios";
@@ -59,7 +59,7 @@ class App extends React.Component {
 
           {/* main component */}
           <div className="main-body">
-            {/* <Menu /> */}
+            <Menu />
             <CardList isLogin={this.state.isLogin} userInfo={this.state.userInfo} />
           </div>
         </div>
@@ -75,7 +75,7 @@ class App extends React.Component {
 
           {/* main component */}
           <div className="main-body">
-            {/* {/* <Menu /> */}
+            <Menu />
             <CardList isLogin={this.state.isLogin} userInfo={this.state.userInfo} />
           </div>
         </div>

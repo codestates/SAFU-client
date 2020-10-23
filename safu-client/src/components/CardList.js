@@ -18,7 +18,7 @@ function CardList(props) {
     return (
       <div className="card-list">
         <div className="add-card-div">
-          <img className="add-card-plus" src={plus} width="50px" height="50px"></img>
+          <img className="add-card-plus" src={plus} width="60px" height="60px" />
         </div>
         {cardData.map((card) => (
           <Card key={card.id} card={card} />

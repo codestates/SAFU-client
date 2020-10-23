@@ -12,7 +12,7 @@ function Nav(props) {
   // 하위의 li 들은 컴포넌트로 변경예정
   if (props.isLogin) {
     return (
-      <div>
+      <div className="navi">
         <h2 className="title">S*FU</h2>
         <ul>
           <li>
@@ -26,7 +26,7 @@ function Nav(props) {
     );
   } else {
     return (
-      <div>
+      <div className="navi">
         <h2 className="title">S*FU</h2>
         {/* 하위 컴포넌트에 props.handleIsloninChange 를 내려줘야함 */}
         <BrowserRouter>
