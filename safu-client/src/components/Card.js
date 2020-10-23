@@ -8,7 +8,7 @@ const Card = ({ card }) => (
         <li>
           <p>{card.bootcampname.name}</p>
           <a href={card.githublink}>{card.githublink}</a>
-          <p>hdaleee</p>
+          <p>{card.useremail.email}</p>
         </li>
       </ul>
       <ul className="level">

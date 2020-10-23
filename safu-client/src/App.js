@@ -4,7 +4,7 @@ import Nav from "./components/Nav";
 // import Menu from "./components/Menu";
 import CardList from "./components/CardList";
 
-// import axios from "axios";
+import axios from "axios";
 
 class App extends React.Component {
   constructor(props) {
@@ -15,18 +15,31 @@ class App extends React.Component {
       userInfo: [],
     };
 
-    axios
-      .get("http://localhost:4000/reveiws")
+    axios({
+      method: "get",
+      url: "http://localhost:4000/reviews",
+    })
       .then((res) => {
-        // console.log(res.data);
-        if (res.data[1]) {
-          this.setState({ isLogin: res.data[1] });
-        }
-        this.setState({ userInfo: res.data[0] });
+        console.log(res.data);
+        this.setState({ userInfo: res.data });
       })
       .catch((err) => {
-        console.log(err);
+        console.error(err);
       });
+    // axios({
+    //   method: "get",
+    //   url: "http://localhost:4000/reviews",
+    // })
+    //   .then((res) => {
+    //     console.log("res.data:", res.data);
+    //     if (res.data[1]) {
+    //       this.setState({ isLogin: res.data[1] });
+    //     }
+    //     this.setState({ userInfo: res.data[0] });
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   }
 
   handleIsLoginChange() {
@@ -34,7 +47,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("this.state:", this.state);
+    // console.log("this.state:", this.state);
     if (this.isLogin) {
       return (
         <div>
