@@ -37,9 +37,9 @@ class Login extends React.Component {
       .then((res) => {
         //status 가 200이면,
         this.setState({ isLoginMessage: true });
-        // logged main page로 redirect
-        //this.props.history.push('/'); //
-        res.redirect('/');
+      })
+      .then(() => {
+        window.location = '/';
       })
       .catch((err) => {
         //status가 401이면
