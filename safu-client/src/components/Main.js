@@ -1,12 +1,9 @@
 import React from 'react';
-import './App.css';
-import Main from './components/Main';
-import Nav from './components/Nav';
-import Menu from './components/Menu';
-import CardList from './components/CardList';
+import '../App.css';
+import Menu from './Menu';
+import CardList from './CardList';
 
 import axios from 'axios';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,6 +11,7 @@ class App extends React.Component {
 
     this.state = {
       isLogin: false,
+      userInfo: [],
     };
 
     axios({
@@ -23,7 +21,9 @@ class App extends React.Component {
       .then((res) => {
         console.log('getReview: ', res.data[1]);
         if (res.data[1]) {
-          this.setState({ isLogin: true });
+          this.setState({ userInfo: res.data[0], isLogin: true });
+        } else {
+          this.setState({ userInfo: res.data });
         }
       })
       .catch((err) => {
@@ -31,13 +31,18 @@ class App extends React.Component {
       });
   }
 
+  handleIsLoginChange() {
+    this.setState({ isLogin: true });
+  }
+
   render() {
-    console.log('App.js this.state:', this.state);
+    console.log('Main.js this.state:', this.state);
     return (
       <div>
-        <div>
-          {/* Nav component */}
-          <Nav isLogin={this.state.isLogin} />
+        {/* main component */}
+        <div className="main-body">
+          <Menu />
+          <CardList isLogin={this.state.isLogin} userInfo={this.state.userInfo} />
         </div>
       </div>
     );
