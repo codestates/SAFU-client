@@ -3,13 +3,13 @@ import React from 'react';
 import axios from 'axios';
 import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-import Findid from './findId';
+import Findid from './Findid';
 import Findpw from './findPw';
 
 axios.defaults.withCredentials = true;
 const safuID = process.env.GITHUB_CLIENT_ID; //등록 후 결정
 const safuSecret = process.env.GITHUB_CLIENT_SECRET; // 등록 후 결정
-const redirectUri = 'http://localhost'; //등록 후 결정
+const redirectUri = 'https://9ec7872a98e3.ngrok.io'; //등록 후 결정
 
 class Login extends React.Component {
   constructor(props) {
@@ -36,6 +36,7 @@ class Login extends React.Component {
     })
       .then((res) => {
         //status 가 200이면,
+        console.log('로그인 완료');
         this.setState({ isLoginMessage: true });
       })
       .then(() => {
@@ -44,6 +45,7 @@ class Login extends React.Component {
       .catch((err) => {
         //status가 401이면
         if (err.message === 'Request failed with status code 401') {
+          console.log('로그인 거부');
           this.setState({ isLoginMessage: false });
         }
         //그게 아니면 서버에러
@@ -88,26 +90,37 @@ class Login extends React.Component {
           </a>
         </div>
         <div>
-          <BrowserRouter>
-            <ul>
-              <button>
-                <Link to="/Findid">Find Id</Link>
-              </button>
-              <button>
-                <Link to="/Findpw">Find PW</Link>
-              </button>
-            </ul>
-            <Switch>
-              <Route path="/Findid" component={Findid}></Route>
-              <Route path="/Findpw" component={Findpw}></Route>
-            </Switch>
-          </BrowserRouter>
+          <ul>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                this.props.history.push('/Findid');
+              }}
+            >
+              Find Id
+            </button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                this.props.history.push('/Findpw');
+              }}
+            >
+              Find PW
+            </button>
+          </ul>
         </div>
         <div>
           {this.state.isLoginMessage === false ? (
             <div>
               <span> 회원이 아니신가요?</span>
-              <button>Sign up</button>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  this.props.history.push('/SignUp');
+                }}
+              >
+                Sign up
+              </button>
             </div>
           ) : (
             <div>
