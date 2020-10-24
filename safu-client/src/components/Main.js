@@ -20,7 +20,7 @@ class App extends React.Component {
     })
       .then((res) => {
         console.log('getReview: ', res.data[1]);
-        if (res.data[1]) {
+        if (res.data[1].isLogin === true) {
           this.setState({ userInfo: res.data[0], isLogin: true });
         } else {
           this.setState({ userInfo: res.data });
