@@ -1,11 +1,12 @@
 //Login.js - state에 따라 or 라우팅에 따라) 변경되는 부분: x
-
 import React from 'react';
 import axios from 'axios';
+import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
+import Findid from './findId';
+import Findpw from './findPw';
 
 axios.defaults.withCredentials = true;
-
 const safuID = process.env.GITHUB_CLIENT_ID; //등록 후 결정
 const safuSecret = process.env.GITHUB_CLIENT_SECRET; // 등록 후 결정
 const redirectUri = 'http://localhost'; //등록 후 결정
@@ -37,8 +38,8 @@ class Login extends React.Component {
         //status 가 200이면,
         this.setState({ isLoginMessage: true });
         // logged main page로 redirect
-        // App.js의 isLogin state를 state끌어올리기로 변경해주고나서,
-        // this.props.history.push('/reviews')
+        //this.props.history.push('/'); //
+        res.redirect('/');
       })
       .catch((err) => {
         //status가 401이면
@@ -87,8 +88,20 @@ class Login extends React.Component {
           </a>
         </div>
         <div>
-          <button>Find Id</button>
-          <button>Find PW</button>
+          <BrowserRouter>
+            <ul>
+              <button>
+                <Link to="/Findid">Find Id</Link>
+              </button>
+              <button>
+                <Link to="/Findpw">Find PW</Link>
+              </button>
+            </ul>
+            <Switch>
+              <Route path="/Findid" component={Findid}></Route>
+              <Route path="/Findpw" component={Findpw}></Route>
+            </Switch>
+          </BrowserRouter>
         </div>
         <div>
           {this.state.isLoginMessage === false ? (
@@ -106,5 +119,4 @@ class Login extends React.Component {
     );
   }
 }
-
-export default Login;
+export default withRouter(Login);
