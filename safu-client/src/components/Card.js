@@ -3,12 +3,12 @@ import React from "react";
 
 const Card = ({ card }) => (
   <div className="card-list-entry">
-    <div className="card">
+    <div className={card.bootcampname.name + " " + "card"}>
       <ul className="title">
         <li>
           <p>{card.bootcampname.name}</p>
           <a href={card.githublink}>{card.githublink}</a>
-          <p>hdaleee</p>
+          <p>{card.useremail.email}</p>
         </li>
       </ul>
       <ul className="level">

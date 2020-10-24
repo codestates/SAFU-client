@@ -87,7 +87,7 @@ class SignUp extends React.Component {
       })
         .then((res) => {
           //200(OK), 201(Created)
-          // this.props.history.push('/users/login');
+          this.props.history.push('/Login');
           console.log('회원가입 완료');
         })
         .catch((err) => {
@@ -118,16 +118,16 @@ class SignUp extends React.Component {
             </label>
           </li>
           <li>
-            <label htmlFor="password check" onChange={this.handleSignUpValue('passwordCheck')}>
+            <label htmlFor="password check">
               <div>password 확인</div>
-              <input type="password"></input>
+              <input type="password" onChange={this.handleSignUpValue('passwordCheck')}></input>
               <div>{this.state.isAvailedPasswordCheck}</div>
             </label>
           </li>
           <li>
-            <label htmlFor="Github ID" onChange={this.handleSignUpValue('githubId')}>
+            <label htmlFor="Github ID">
               <div>Github ID (for identification)</div>
-              <input></input>
+              <input onChange={this.handleSignUpValue('githubId')}></input>
             </label>
           </li>
         </ul>
@@ -148,5 +148,4 @@ class SignUp extends React.Component {
   }
 }
 
-// export default withRouter(SignUp);
-export default SignUp;
+export default withRouter(SignUp);
