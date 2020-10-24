@@ -3,8 +3,6 @@ import React from 'react';
 import axios from 'axios';
 import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-import Findid from './Findid';
-import Findpw from './findPw';
 
 axios.defaults.withCredentials = true;
 const safuID = process.env.GITHUB_CLIENT_ID; //등록 후 결정

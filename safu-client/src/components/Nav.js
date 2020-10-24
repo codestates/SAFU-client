@@ -6,9 +6,8 @@ import Login from './Login';
 import SignUp from './SignUp';
 import Mypage from './Mypage';
 import Main from './Main';
-import Findid from './Findid';
+import Findid from './findId';
 import Findpw from './findPw';
-import { render } from 'react-dom';
 
 axios.defaults.withCredentials = true;
 

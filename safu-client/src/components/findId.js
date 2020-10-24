@@ -1,4 +1,4 @@
-//Findid.js - state에 따라 or 라우팅에 따라) 변경되는 부분: x
+//findId.js - state에 따라 or 라우팅에 따라) 변경되는 부분: x
 import React from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
@@ -8,7 +8,6 @@ class Findid extends React.Component {
     super(props);
     this.state = {};
     this.githubId = '';
-    console.log('findid res data:');
   }
   handleFindIdValue = () => (e) => {
     this.githubId = e.target.value;
@@ -24,7 +23,6 @@ class Findid extends React.Component {
     })
       .then((res) => {
         //status 200
-        console.log('findid res data:', res.data);
         if (res.data !== null) {
           alert('회원님의 email은 ' + res.data + ' 입니다. 로그인 페이지로 이동하시겠습니까?'); // alert부분, API 구현 완료시 modal창으로 바꿀 것임.
           //확인 버튼을 누르면,
