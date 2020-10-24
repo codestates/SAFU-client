@@ -1,7 +1,7 @@
-"react district";
-import React from "react";
-import Card from "./Card";
-import plus from "../images/plus.png";
+'react district';
+import React from 'react';
+import Card from './Card';
+import plus from '../images/plus.png';
 
 //CardList.js - (state에 따라 or 라우팅에 따라) 변경되는 부분:
 //  1. 비로그인시 main => 메뉴에서 특정 bootcamp click시 랜더링 되는 Card 컴포넌트들
@@ -12,8 +12,8 @@ function CardList(props) {
   // console.log("props :", props);
   const isLogin = props.isLogin;
   const cardData = props.userInfo;
-  // console.log("cardData :", cardData);
-  // console.log("isLogin : ", isLogin);
+  console.log('cardData :', cardData);
+  console.log('isLogin : ', isLogin);
   if (isLogin) {
     return (
       <div className="card-list">

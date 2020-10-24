@@ -12,7 +12,7 @@ class Mypage extends React.Component {
   render() {
     return (
       <div>
-        <h2>My Page</h2>A
+        <h2>My Page</h2>
         <ul>
           <li>
             <p>E-mail</p>
