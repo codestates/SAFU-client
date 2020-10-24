@@ -1,9 +1,10 @@
 //Mypage.js - 로그인 후 Nav 바의 Mypage를 누르면 이 <Mypaage>컴포넌트에서 개인정보 열람과 수정,
 // 자신이 작성한 <CardList>가 나타난다.
+
 import React from 'react';
 import axios from 'axios';
 import CardList from './CardList';
-import Nav from './Nav';
+
 class Mypage extends React.Component {
   constructor(props) {
     super(props);
@@ -11,8 +12,7 @@ class Mypage extends React.Component {
   render() {
     return (
       <div>
-        {/* <Nav></Nav> 상현님 Nav랑 합쳐지면 주석 풀기*/}
-        <h2>My Page</h2>
+        <h2>My Page</h2>A
         <ul>
           <li>
             <p>E-mail</p>
