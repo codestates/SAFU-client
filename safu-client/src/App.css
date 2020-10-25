@@ -15,9 +15,12 @@ li {
   text-align: center;
 }
 .navi .title {
-  color: white;
   display: inline-block;
   margin-top: 8px;
+}
+.navi .title a {
+  color: white;
+  text-decoration: none;
 }
 .nav-ul {
   position: absolute;
@@ -130,4 +133,33 @@ ul.card li p:last-child {
   margin-top: 20px !important;
   margin-right: 10px !important;
   padding-bottom: 10px !important;
+}
+
+/* signup setting */
+.signup-div {
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: 8%;
+}
+.signup-box li {
+  width: 300px;
+  display: block;
+  box-shadow: #939393 0 0 1em;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  height: 100%;
+}
+.signup-box li div:first-child {
+  padding-top: 10px;
+  margin-bottom: 12px;
+}
+.signup-box li input {
+  margin-bottom: 15px;
+}
+.signup-box li div:last-child {
+  color: rgb(218, 74, 74);
+  width: 280px;
+  margin-left: 10px;
+  padding-bottom: 10px;
 }

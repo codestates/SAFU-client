@@ -36,7 +36,9 @@ class Nav extends React.Component {
     if (this.props.isLogin) {
       return (
         <div className="navi">
-          <h2 className="title">S*FU</h2>
+          <h2 className="title">
+            <a href="/">S*FU</a>
+          </h2>
           <BrowserRouter>
             <ul className="nav-ul">
               <li>
@@ -65,7 +67,9 @@ class Nav extends React.Component {
     } else {
       return (
         <div className="navi">
-          <h2 className="title">S*FU</h2>
+          <h2 className="title">
+            <a href="/">S*FU</a>
+          </h2>
           <BrowserRouter>
             <ul className="nav-ul">
               <li>
