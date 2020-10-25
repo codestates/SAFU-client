@@ -67,6 +67,10 @@ input {
 .menu-body {
   margin: 20px 0 40px 0;
   text-align: center;
+  width: 1200px;
+  left: 50%;
+  margin-left: -600px;
+  position: absolute;
 }
 .bootcamp-list button {
   margin: 20px;
@@ -83,8 +87,10 @@ input {
   font-size: 20px;
   font-weight: 700;
   box-shadow: none;
+  width: 200px;
 }
 .menu-body button {
+  width: 200px;
   color: #6b5fd0;
   border: 2px #6b5fd0 solid;
   background: white;
@@ -265,4 +271,24 @@ ul.card li p:last-child {
   box-shadow: #bababa 0 0 1em;
   width: 100%;
   margin-top: 20px;
+}
+
+/* findId setting */
+.findId-div {
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: 8%;
+}
+.findId-box li {
+  width: 300px;
+  display: block;
+  box-shadow: #bababa 0 0 1em;
+  border-radius: 25px;
+  margin-bottom: 15px;
+  height: 100%;
+}
+.findId-box li div:first-child {
+  padding-top: 10px;
+  margin-bottom: 12px;
 }
