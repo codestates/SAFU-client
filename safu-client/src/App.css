@@ -67,10 +67,6 @@ input {
 .menu-body {
   margin: 20px 0 40px 0;
   text-align: center;
-  width: 1200px;
-  left: 50%;
-  margin-left: -600px;
-  position: absolute;
 }
 .bootcamp-list button {
   margin: 20px;
