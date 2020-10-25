@@ -75,7 +75,8 @@ class SignUp extends React.Component {
     if (
       this.state.isAvailedEmail === '' &&
       this.state.isAvailedPassword === '' &&
-      this.state.isAvailedPasswordCheck === ''
+      this.state.isAvailedPasswordCheck === '' &&
+      this.state.githubId !== ''
     ) {
       axios({
         method: 'post',
