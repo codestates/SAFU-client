@@ -1,0 +1,133 @@
+body {
+  position: relative;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* navi isNotLogIn setting */
+.navi {
+  width: 100%;
+  height: 50px;
+  background-color: #313131;
+  text-align: center;
+}
+.navi .title {
+  color: white;
+  display: inline-block;
+  margin-top: 8px;
+}
+.nav-ul {
+  position: absolute;
+  display: inline-block;
+  margin-top: 1%;
+  right: 0;
+}
+.nav-ul li {
+  font-size: 16px;
+  line-height: 1.5;
+  display: inline-block;
+  height: 25px;
+  margin-right: 15px;
+}
+.nav-ul li:first-child {
+  border-right: solid 1px white;
+  padding-right: 15px;
+}
+.nav-ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* menu setting */
+.menu-body {
+  margin: 20px 0 40px 0;
+  text-align: center;
+}
+.bootcamp-list button {
+  margin: 20px;
+  font-size: 20px;
+}
+.bootcamp-list button:last-child {
+  margin-right: 0;
+}
+
+/* cardlist setting */
+.card-list {
+  width: 960px;
+  position: absolute;
+  left: 50%;
+  margin-left: -480px;
+}
+.card-list-entry {
+  float: left;
+  border-radius: 30px;
+  height: 570px;
+  width: 300px;
+  margin: 10px;
+  box-shadow: #939393 0 0 1em;
+}
+.add-card-div {
+  float: left;
+  border-radius: 30px;
+  height: 570px;
+  width: 300px;
+  margin: 10px;
+  box-shadow: #939393 0 0 1em;
+}
+.add-card-div img {
+  margin-top: 75%;
+  padding: 25px;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: #a1a1a1 0 0 1em;
+}
+
+/* card setting */
+ul.card {
+  width: 270px;
+  position: relative;
+}
+ul.card li {
+  display: block;
+  box-shadow: #a1a1a1 0 0 1em;
+  border-radius: 15px;
+  margin: 10px 15px;
+  width: 270px;
+}
+ul.card li p:first-child {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  margin-left: 15px;
+  margin-top: 15px;
+  padding-top: 10px;
+  margin-bottom: -5px;
+}
+ul.card li p:last-child {
+  font-size: 18px;
+  text-align: right;
+  margin: 12px 15px 0 0;
+  padding-bottom: 10px;
+}
+.bootcamp-name {
+  font-size: 24px !important;
+}
+.card-title:first-child a {
+  color: #6b5fd0;
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  text-align: right;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-bottom: -18px;
+}
+.user-mail {
+  font-size: 15px !important;
+  margin-top: 20px !important;
+  margin-right: 10px !important;
+  padding-bottom: 10px !important;
+}

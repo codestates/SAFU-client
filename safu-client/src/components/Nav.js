@@ -37,31 +37,29 @@ class Nav extends React.Component {
       return (
         <div className="navi">
           <h2 className="title">S*FU</h2>
-          <nav className="routing">
-            <BrowserRouter>
-              <ul>
-                <li>
-                  <Link to="/Mypage">my page</Link>
-                </li>
-                <li>
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      {
-                        this.handleLogoutButton();
-                      }
-                    }}
-                  >
-                    log out
-                  </button>
-                </li>
-              </ul>
-              <Switch>
-                <Route path="/" exact component={Main}></Route>
-                <Route path="/Mypage" component={Mypage}></Route>
-              </Switch>
-            </BrowserRouter>
-          </nav>
+          <BrowserRouter>
+            <ul className="nav-ul">
+              <li>
+                <Link to="/Mypage">my page</Link>
+              </li>
+              <li>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    {
+                      this.handleLogoutButton();
+                    }
+                  }}
+                >
+                  log out
+                </button>
+              </li>
+            </ul>
+            <Switch>
+              <Route path="/" exact component={Main}></Route>
+              <Route path="/Mypage" component={Mypage}></Route>
+            </Switch>
+          </BrowserRouter>
         </div>
       );
     } else {
@@ -69,7 +67,7 @@ class Nav extends React.Component {
         <div className="navi">
           <h2 className="title">S*FU</h2>
           <BrowserRouter>
-            <ul>
+            <ul className="nav-ul">
               <li>
                 <Link to="/SignUp">sign up</Link>
               </li>
