@@ -4,25 +4,21 @@ import Main from './components/Main';
 import Nav from './components/Nav';
 import Menu from './components/Menu';
 import CardList from './components/CardList';
-
 import axios from 'axios';
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
-
 class App extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       isLogin: false,
     };
-
     axios({
       method: 'get',
       url: 'http://localhost:4000/reviews',
     })
       .then((res) => {
-        console.log('getReview: ', res.data[1]);
-        if (res.data[1]) {
+        console.log('App getReview isLogin: ', res.data[1]);
+        if (res.data[1] !== undefined && res.data[1].isLogin === true) {
           this.setState({ isLogin: true });
         }
       })
@@ -30,9 +26,7 @@ class App extends React.Component {
         console.error(err);
       });
   }
-
   render() {
-    console.log('App.js this.state:', this.state);
     return (
       <div>
         <div>
@@ -43,5 +37,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;
