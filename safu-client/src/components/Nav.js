@@ -6,7 +6,8 @@ import Login from './Login';
 import SignUp from './SignUp';
 import Mypage from './Mypage';
 import Main from './Main';
-import { render } from 'react-dom';
+import Findid from './findId';
+import Findpw from './findPw';
 
 axios.defaults.withCredentials = true;
 
@@ -36,7 +37,6 @@ class Nav extends React.Component {
       return (
         <div className="navi">
           <h2 className="title">S*FU</h2>
-
           <nav className="routing">
             <BrowserRouter>
               <ul>
@@ -79,9 +79,11 @@ class Nav extends React.Component {
             </ul>
 
             <Switch>
+              <Route path="/" exact component={Main}></Route>
               <Route path="/SignUp" component={SignUp}></Route>
               <Route path="/Login" component={Login}></Route>
-              <Route path="/" component={Main}></Route>
+              <Route path="/Findid" component={Findid}></Route>
+              <Route path="/Findpw" component={Findpw}></Route>
             </Switch>
           </BrowserRouter>
         </div>
