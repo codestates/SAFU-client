@@ -3,12 +3,10 @@ import React from 'react';
 import axios from 'axios';
 import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
-
 axios.defaults.withCredentials = true;
 const safuID = process.env.GITHUB_CLIENT_ID; //등록 후 결정
 const safuSecret = process.env.GITHUB_CLIENT_SECRET; // 등록 후 결정
 const redirectUri = 'https://9ec7872a98e3.ngrok.io'; //등록 후 결정
-
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -18,11 +16,9 @@ class Login extends React.Component {
       isLoginMessage: false,
     };
   }
-
   handleLoginValue = (key) => (e) => {
     this.setState({ [key]: e.target.value });
   };
-
   handleLoginButton = () => {
     axios({
       method: 'post',
@@ -43,13 +39,12 @@ class Login extends React.Component {
       .catch((err) => {
         //status가 401이면
         if (err.message === 'Request failed with status code 401') {
-          console.log('로그인 거부');
+          alert('회원 정보를 찾을 수 없습니다. email과 password를 확인해주세요.');
           this.setState({ isLoginMessage: false });
         }
         //그게 아니면 서버에러
       });
   };
-
   render() {
     return (
       <div>
