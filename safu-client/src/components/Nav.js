@@ -36,40 +36,42 @@ class Nav extends React.Component {
     if (this.props.isLogin) {
       return (
         <div className="navi">
-          <h2 className="title">S*FU</h2>
-          <nav className="routing">
-            <BrowserRouter>
-              <ul>
-                <li>
-                  <Link to="/Mypage">my page</Link>
-                </li>
-                <li>
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      {
-                        this.handleLogoutButton();
-                      }
-                    }}
-                  >
-                    log out
-                  </button>
-                </li>
-              </ul>
-              <Switch>
-                <Route path="/" exact component={Main}></Route>
-                <Route path="/Mypage" component={Mypage}></Route>
-              </Switch>
-            </BrowserRouter>
-          </nav>
+          <h2 className="title">
+            <a href="/">S*FU</a>
+          </h2>
+          <BrowserRouter>
+            <ul className="nav-ul">
+              <li>
+                <Link to="/Mypage">my page</Link>
+              </li>
+              <li>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    {
+                      this.handleLogoutButton();
+                    }
+                  }}
+                >
+                  log out
+                </button>
+              </li>
+            </ul>
+            <Switch>
+              <Route path="/" exact component={Main}></Route>
+              <Route path="/Mypage" component={Mypage}></Route>
+            </Switch>
+          </BrowserRouter>
         </div>
       );
     } else {
       return (
         <div className="navi">
-          <h2 className="title">S*FU</h2>
+          <h2 className="title">
+            <a href="/">S*FU</a>
+          </h2>
           <BrowserRouter>
-            <ul>
+            <ul className="nav-ul">
               <li>
                 <Link to="/SignUp">sign up</Link>
               </li>

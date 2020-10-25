@@ -25,6 +25,7 @@ class SignUp extends React.Component {
       if (useremail.length > 0 && false === emailreg.test(useremail)) {
         this.setState({ isAvailedEmail: '올바른 이메일 형식이 아닙니다.' });
       } else {
+        this.setState({ isAvailedEmail: '' });
         axios({
           method: 'post',
           url: 'http://localhost:4000/users/signup/checkId',
@@ -101,30 +102,30 @@ class SignUp extends React.Component {
   render() {
     const { history } = this.props;
     return (
-      <div>
-        <ul>
-          <li>
+      <div className="signup-div">
+        <ul className="signup-box">
+          <li className="email-box">
             <label htmlFor="useremail">
               <div>email</div>
               <input type="useremail" onChange={this.handleSignUpValue('useremail')}></input>
               <div>{this.state.isAvailedEmail}</div>
             </label>
           </li>
-          <li>
+          <li className="password-box">
             <label htmlFor="password">
               <div>password</div>
               <input type="password" onChange={this.handleSignUpValue('password')}></input>
               <div>{this.state.isAvailedPassword}</div>
             </label>
           </li>
-          <li>
+          <li className="password-chck-box">
             <label htmlFor="password check">
-              <div>password 확인</div>
+              <div>verify password</div>
               <input type="password" onChange={this.handleSignUpValue('passwordCheck')}></input>
               <div>{this.state.isAvailedPasswordCheck}</div>
             </label>
           </li>
-          <li>
+          <li className="github-id-box">
             <label htmlFor="Github ID">
               <div>Github ID (for identification)</div>
               <input onChange={this.handleSignUpValue('githubId')}></input>
