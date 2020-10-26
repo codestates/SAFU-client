@@ -6,6 +6,25 @@ li {
   margin: 0;
   padding: 0;
 }
+a {
+  color: #564ac4;
+}
+button {
+  color: #6b5fd0;
+  border: 0px;
+  background: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 18px;
+  width: 100%;
+  height: 50px;
+  box-shadow: #bababa 0 0 1em;
+}
+input {
+  margin-bottom: 15px;
+  border: 1px solid #bababa;
+  width: 260px;
+}
 
 /* navi isNotLogIn setting */
 .navi {
@@ -56,6 +75,26 @@ li {
 .bootcamp-list button:last-child {
   margin-right: 0;
 }
+.menu-body button:first-child {
+  color: white;
+  border: 2px #6b5fd0 solid;
+  background: #6b5fd0;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: none;
+  width: 200px;
+}
+.menu-body button {
+  width: 200px;
+  color: #6b5fd0;
+  border: 2px #6b5fd0 solid;
+  background: white;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 500;
+  box-shadow: none;
+}
 
 /* cardlist setting */
 .card-list {
@@ -70,7 +109,7 @@ li {
   height: 570px;
   width: 300px;
   margin: 10px;
-  box-shadow: #939393 0 0 1em;
+  box-shadow: #bababa 0 0 1em;
 }
 .add-card-div {
   float: left;
@@ -78,14 +117,14 @@ li {
   height: 570px;
   width: 300px;
   margin: 10px;
-  box-shadow: #939393 0 0 1em;
+  box-shadow: #bababa 0 0 1em;
 }
 .add-card-div img {
   margin-top: 75%;
   padding: 25px;
   background-color: white;
   border-radius: 25px;
-  box-shadow: #a1a1a1 0 0 1em;
+  box-shadow: #bababa 0 0 1em;
 }
 
 /* card setting */
@@ -95,10 +134,13 @@ ul.card {
 }
 ul.card li {
   display: block;
-  box-shadow: #a1a1a1 0 0 1em;
-  border-radius: 15px;
+  box-shadow: #bababa 0 0 1em;
+  border-radius: 20px;
   margin: 10px 15px;
   width: 270px;
+}
+ul.card li:first-child {
+  border-radius: 25px;
 }
 ul.card li p:first-child {
   font-size: 16px;
@@ -145,8 +187,8 @@ ul.card li p:last-child {
 .signup-box li {
   width: 300px;
   display: block;
-  box-shadow: #939393 0 0 1em;
-  border-radius: 15px;
+  box-shadow: #bababa 0 0 1em;
+  border-radius: 25px;
   margin-bottom: 15px;
   height: 100%;
 }
@@ -154,12 +196,95 @@ ul.card li p:last-child {
   padding-top: 10px;
   margin-bottom: 12px;
 }
-.signup-box li input {
-  margin-bottom: 15px;
-}
 .signup-box li div:last-child {
   color: rgb(218, 74, 74);
   width: 280px;
   margin-left: 10px;
-  padding-bottom: 10px;
+}
+.signup-box li div:first-child {
+  padding-top: 10px;
+  margin-bottom: 12px;
+  text-align: left;
+  padding-left: 20px;
+  width: 100%;
+}
+
+/* login setting */
+.login-div {
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: 8%;
+}
+.login-box li {
+  width: 300px;
+  display: block;
+  box-shadow: #bababa 0 0 1em;
+  border-radius: 25px;
+  margin-bottom: 15px;
+  height: 100%;
+}
+.login-box li div:first-child {
+  padding-top: 10px;
+  margin-bottom: 12px;
+  text-align: left;
+  padding-left: 20px;
+  width: 100%;
+}
+.social-login-div {
+  margin: 15px 0;
+  color: #6b5fd0;
+  background: white;
+  border-radius: 15px;
+  font-size: 18px;
+  box-shadow: none;
+  width: 100%;
+  font-weight: 600;
+  border-radius: 18px;
+  height: 35px;
+  box-shadow: #bababa 0 0 1em;
+  padding-top: 15px;
+}
+.social-login-div a {
+  text-decoration: none;
+}
+.find-div {
+  margin-bottom: 25px;
+}
+.find-div button {
+  width: 143px;
+  margin-right: 14px;
+}
+.find-div button:last-child {
+  margin-right: 0;
+}
+.go-to-signup-div button {
+  color: #6b5fd0;
+  border: none;
+  background: white;
+  border-radius: 15px;
+  font-size: 18px;
+  box-shadow: #bababa 0 0 1em;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* findId setting */
+.findId-div {
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: 8%;
+}
+.findId-box li {
+  width: 300px;
+  display: block;
+  box-shadow: #bababa 0 0 1em;
+  border-radius: 25px;
+  margin-bottom: 15px;
+  height: 100%;
+}
+.findId-box li div:first-child {
+  padding-top: 10px;
+  margin-bottom: 12px;
 }

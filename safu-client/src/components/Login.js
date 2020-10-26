@@ -47,14 +47,14 @@ class Login extends React.Component {
   };
   render() {
     return (
-      <div>
-        <ul>
+      <div className="login-div">
+        <ul className="login-box">
           <li>
-            <span>email</span>
+            <div>email</div>
             <input type="email" onChange={this.handleLoginValue('useremail')}></input>
           </li>
           <li>
-            <span>password</span>
+            <div>password</div>
             <input type="password" onChange={this.handleLoginValue('password')}></input>
           </li>
         </ul>
@@ -70,7 +70,7 @@ class Login extends React.Component {
             Log in
           </button>
         </div>
-        <div>
+        <div className="social-login-div">
           <a
             href={
               'https://github.com/login/oauth/authorize?client_id=' +
@@ -82,7 +82,7 @@ class Login extends React.Component {
             Log in with Github
           </a>
         </div>
-        <div>
+        <div className="find-div">
           <ul>
             <button
               onClick={(e) => {
@@ -104,8 +104,8 @@ class Login extends React.Component {
         </div>
         <div>
           {this.state.isLoginMessage === false ? (
-            <div>
-              <span> 회원이 아니신가요?</span>
+            <div className="go-to-signup-div">
+              <span> Not a member yet?</span>
               <button
                 onClick={(e) => {
                   e.preventDefault();

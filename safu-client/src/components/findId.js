@@ -44,8 +44,8 @@ class Findid extends React.Component {
   };
   render() {
     return (
-      <div>
-        <ul>
+      <div className="findId-div">
+        <ul className="findId-box">
           <li>
             <div>Github ID</div>
             <input onChange={this.handleFindIdValue()}></input>
