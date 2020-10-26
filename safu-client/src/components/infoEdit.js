@@ -68,6 +68,22 @@ class Infoedit extends React.Component {
       alert('수정할 것이 없습니다.');
     }
   };
+  handleDeactivateButton = () => {
+    axios({
+      method: 'delete',
+      url: 'http://localhost:4000/users/edit/delete',
+    })
+      .then((res) => {
+        //200(OK)
+        console.log('안전하게 탈퇴처리되었습니다.');
+        alert('안전하게 탈퇴처리되었습니다.');
+        window.location = '/';
+      })
+      .catch((err) => {
+        //500(err)
+        console.error(err);
+      });
+  };
   render() {
     return (
       <div className="signup-div">
@@ -108,7 +124,18 @@ class Infoedit extends React.Component {
               }
             }}
           >
-            Submit
+            Confirm
+          </button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              {
+                alert('회원을 탈퇴하시겠습니까?');
+                this.handleDeactivateButton();
+              }
+            }}
+          >
+            Deactivate
           </button>
         </div>
       </div>

@@ -17,11 +17,7 @@ class Mypage extends React.Component {
       url: 'http://localhost:4000/users/read',
     })
       .then((res) => {
-        if (res.data[1] !== undefined && res.data[1].isLogin === true) {
-          this.setState({ userInfo: res.data[0], isLogin: true });
-        } else {
-          this.setState({ userInfo: res.data });
-        }
+        this.setState({ userInfo: res.data });
       })
       .catch((err) => {
         console.error(err);
