@@ -30,7 +30,7 @@ class Mypage extends React.Component {
   render() {
     return (
       <div>
-        <h2>My Page</h2>
+        {/* <h2>My Page</h2> */}
         <ul>
           <li>
             <p>E-mail</p>
@@ -45,7 +45,14 @@ class Mypage extends React.Component {
               <button
                 onClick={(e) => {
                   e.preventDefault();
-                  this.props.history.push('/Infoedit');
+                  this.props.history.push({
+                    pathname: '/Infoedit',
+                    userInfo: {
+                      email: 'thdguswn93@naver.com', //여기를 {userInfo.useremail.email} 로 넣어줘야함.
+                      password: '1234', //여기를 {userInfo.password} 로 넣어줘야함.
+                      githubId: 'hyunju-song', //여기를 {userInfo.githubId} 로 넣어줘야함.
+                    },
+                  });
                 }}
               >
                 개인정보수정
