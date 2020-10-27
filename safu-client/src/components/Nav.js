@@ -39,7 +39,7 @@ class Nav extends React.Component {
             <a href="/">S*FU</a>
           </h2>
           <BrowserRouter>
-            <ul className="nav-ul">
+            <ul className="nav-ul-login nav-ul">
               <li>
                 <Link to="/Mypage">my page</Link>
               </li>
