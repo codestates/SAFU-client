@@ -17,7 +17,6 @@ class App extends React.Component {
       url: 'http://localhost:4000/reviews',
     })
       .then((res) => {
-        console.log('App getReview isLogin: ', res.data[1]);
         if (res.data[1] !== undefined && res.data[1].isLogin === true) {
           this.setState({ isLogin: true });
         }
