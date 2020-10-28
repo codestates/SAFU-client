@@ -8,8 +8,11 @@ import Mypage from './Mypage';
 import Main from './Main';
 import Findid from './findId';
 import Findpw from './findPw';
+import Infoedit from './infoEdit';
 import CardWrite from './CardWrite';
+
 axios.defaults.withCredentials = true;
+
 class Nav extends React.Component {
   // console.log("props :",props);
   // 하위의 li 들은 컴포넌트로 변경예정
@@ -61,6 +64,7 @@ class Nav extends React.Component {
             <Switch>
               <Route path="/" exact component={Main}></Route>
               <Route path="/Mypage" component={Mypage}></Route>
+              <Route path="/Infoedit" component={Infoedit}></Route>
               <Route path="/CardWrite" component={CardWrite}></Route>
             </Switch>
           </BrowserRouter>
