@@ -2,10 +2,13 @@
 import React from 'react';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
+
 class Infoedit extends React.Component {
   constructor(props) {
     super(props);
-    const userInfo = props.history.location.userInfo;
+    // const userInfo = props.history.location.userInfo;
+
+    // console.log('EdituserInfo: ', props.history.location.userInfo);
     this.state = {
       useremail: this.props.history.location.userInfo.email,
       password: this.props.history.location.userInfo.password,
