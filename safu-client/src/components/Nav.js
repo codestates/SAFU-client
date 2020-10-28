@@ -8,6 +8,7 @@ import Mypage from './Mypage';
 import Main from './Main';
 import Findid from './findId';
 import Findpw from './findPw';
+import CardWrite from './CardWrite';
 axios.defaults.withCredentials = true;
 class Nav extends React.Component {
   // console.log("props :",props);
@@ -60,6 +61,7 @@ class Nav extends React.Component {
             <Switch>
               <Route path="/" exact component={Main}></Route>
               <Route path="/Mypage" component={Mypage}></Route>
+              <Route path="/CardWrite" component={CardWrite}></Route>
             </Switch>
           </BrowserRouter>
         </div>
