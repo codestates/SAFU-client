@@ -9,6 +9,7 @@ import Main from './Main';
 import Findid from './findId';
 import Findpw from './findPw';
 import Infoedit from './infoEdit';
+import CardWrite from './CardWrite';
 
 axios.defaults.withCredentials = true;
 
@@ -42,7 +43,7 @@ class Nav extends React.Component {
             <a href="/">S*FU</a>
           </h2>
           <BrowserRouter>
-            <ul className="nav-ul">
+            <ul className="nav-ul-login nav-ul">
               <li>
                 <Link to="/Mypage">my page</Link>
               </li>
@@ -64,6 +65,7 @@ class Nav extends React.Component {
               <Route path="/" exact component={Main}></Route>
               <Route path="/Mypage" component={Mypage}></Route>
               <Route path="/Infoedit" component={Infoedit}></Route>
+              <Route path="/CardWrite" component={CardWrite}></Route>
             </Switch>
           </BrowserRouter>
         </div>

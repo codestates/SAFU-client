@@ -2,8 +2,8 @@ import React from 'react';
 //Card.js - state에 따라 or 라우팅에 따라) 변경되는 부분:  x
 
 const Card = ({ card }) => (
-  <div className="card-list-entry">
-    <ul className={card.bootcampname.name + ' ' + 'card'}>
+  <div className={'card-list-entry' + ' ' + card.bootcampname.name}>
+    <ul className={'card'}>
       <li className="card-title">
         <p className="bootcamp-name">{card.bootcampname.name}</p>
         <a href={card.githublink}>{card.githublink}</a>
