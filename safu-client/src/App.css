@@ -76,12 +76,19 @@ select {
 
 /* menu setting */
 .menu-body {
-  margin: 20px 0 40px 0;
+  position: absolute;
+  width: 960px;
+  left: 50%;
+  padding-top: 30px;
+  margin-left: -480px;
   text-align: center;
 }
 .bootcamp-list button {
   margin: 20px;
   font-size: 20px;
+}
+.bootcamp-list button:first-child {
+  margin-left: 0;
 }
 .bootcamp-list button:last-child {
   margin-right: 0;
@@ -112,6 +119,7 @@ select {
   width: 960px;
   position: absolute;
   left: 50%;
+  top: 400px;
   margin-left: -480px;
 }
 .card-list-entry {
@@ -206,7 +214,7 @@ ul.card li p:last-child {
   color: #bababa;
   font-size: 90px;
   line-height: 1;
-  top: 50%;
+  top: 285px;
   position: absolute;
   margin: -55px 0px 0px -45px;
 }
@@ -215,7 +223,7 @@ ul.card li p:last-child {
 }
 .add-card-plus.modal-open {
   margin-left: -45px;
-  margin-top: 240px;
+  margin-top: -55px;
 }
 .card-write-div {
   position: absolute;
