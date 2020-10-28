@@ -18,7 +18,7 @@ button {
   border-radius: 18px;
   width: 100%;
   height: 50px;
-  box-shadow: #bababa 0 0 1em;
+  box-shadow: #bababa 0 0 15px;
 }
 input {
   margin-bottom: 15px;
@@ -44,7 +44,7 @@ input {
 .nav-ul {
   position: absolute;
   display: inline-block;
-  margin-top: 1%;
+  padding-top: 10px;
   right: 0;
 }
 .nav-ul li {
@@ -61,6 +61,16 @@ input {
 .nav-ul li a {
   color: white;
   text-decoration: none;
+}
+.nav-ul-login {
+  padding-top: 0;
+}
+.nav-ul-login li button {
+  color: white;
+  background: none;
+  font-size: 16px;
+  font-weight: 300;
+  box-shadow: none;
 }
 
 /* menu setting */
@@ -108,8 +118,17 @@ input {
   border-radius: 30px;
   height: 570px;
   width: 300px;
-  margin: 10px;
-  box-shadow: #bababa 0 0 1em;
+  margin: 10px 10px 25px 10px;
+  box-shadow: #bababa 0 0 15px;
+}
+.card-list-entry.codestates {
+  background-image: url(./images/purple.jpg);
+}
+.card-list-entry.fastcampus {
+  background-image: url(./images/red.jpg);
+}
+.card-list-entry.vanillacoding {
+  background-image: url(./images/yellow.jpg);
 }
 .add-card-div {
   float: left;
@@ -117,14 +136,14 @@ input {
   height: 570px;
   width: 300px;
   margin: 10px;
-  box-shadow: #bababa 0 0 1em;
+  box-shadow: #bababa 0 0 15px;
 }
 .add-card-div img {
   margin-top: 75%;
   padding: 25px;
   background-color: white;
   border-radius: 25px;
-  box-shadow: #bababa 0 0 1em;
+  box-shadow: #bababa 0 0 15px;
 }
 
 /* card setting */
@@ -134,7 +153,8 @@ ul.card {
 }
 ul.card li {
   display: block;
-  box-shadow: #bababa 0 0 1em;
+  background: white;
+  box-shadow: #bababa 0 0 15px;
   border-radius: 20px;
   margin: 10px 15px;
   width: 270px;
@@ -187,7 +207,7 @@ ul.card li p:last-child {
 .signup-box li {
   width: 300px;
   display: block;
-  box-shadow: #bababa 0 0 1em;
+  box-shadow: #bababa 0 0 15px;
   border-radius: 25px;
   margin-bottom: 15px;
   height: 100%;
@@ -219,7 +239,7 @@ ul.card li p:last-child {
 .login-box li {
   width: 300px;
   display: block;
-  box-shadow: #bababa 0 0 1em;
+  box-shadow: #bababa 0 0 15px;
   border-radius: 25px;
   margin-bottom: 15px;
   height: 100%;
@@ -242,7 +262,7 @@ ul.card li p:last-child {
   font-weight: 600;
   border-radius: 18px;
   height: 35px;
-  box-shadow: #bababa 0 0 1em;
+  box-shadow: #bababa 0 0 15px;
   padding-top: 15px;
 }
 .social-login-div a {
@@ -264,7 +284,7 @@ ul.card li p:last-child {
   background: white;
   border-radius: 15px;
   font-size: 18px;
-  box-shadow: #bababa 0 0 1em;
+  box-shadow: #bababa 0 0 15px;
   width: 100%;
   margin-top: 20px;
 }
@@ -279,7 +299,7 @@ ul.card li p:last-child {
 .findId-box li {
   width: 300px;
   display: block;
-  box-shadow: #bababa 0 0 1em;
+  box-shadow: #bababa 0 0 15px;
   border-radius: 25px;
   margin-bottom: 15px;
   height: 100%;
