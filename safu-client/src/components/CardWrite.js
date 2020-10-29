@@ -29,10 +29,15 @@ class CardWrite extends React.Component {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            axios.post('http://localhost:4000/review/create', this.state).catch((err) => {
-              alert('failed to create');
-              console.log(err);
-            });
+            axios
+              .post('http://localhost:4000/reviews/create', this.state)
+              .then((res) => {
+                window.location = '/';
+              })
+              .catch((err) => {
+                alert('failed to create');
+                console.log(err);
+              });
           }}
         >
           <div className="card-write">
