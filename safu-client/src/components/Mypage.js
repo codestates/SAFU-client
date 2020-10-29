@@ -2,22 +2,22 @@
 // 자신이 작성한 <CardList>가 나타난다.
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import CardList from './CardList';
+// import CardList from './CardList';
+import CardEdit from './CardEdit';
 
 function Mypage(props) {
   const [loading, setLoading] = useState(true);
   const [users, setUsers] = useState([]);
-
   useEffect(() => {
     axios({
       method: 'get',
       url: 'http://localhost:4000/users/read',
     }).then((users) => {
+      console.log('mypage 정보 받아와!', users.data);
       setUsers(users.data);
       setLoading(false);
     });
   }, []);
-
   if (loading) return <div>Loading...</div>;
   return (
     <div>
@@ -25,11 +25,11 @@ function Mypage(props) {
         <li>
           {console.log('users', users[0])}
           <p>E-mail</p>
-          <p>{users[0].useremail.email}</p>
+          <p>{users[0].email}</p>
         </li>
         <li>
           <p>Github ID</p>
-          <p>{users[0].useremail.githubId}</p>
+          <p>{users[0].githubId}</p>
         </li>
         <li>
           <div>
@@ -39,9 +39,9 @@ function Mypage(props) {
                 props.history.push({
                   pathname: '/Infoedit',
                   userInfo: {
-                    email: users[0].useremail.email,
-                    password: users[0].useremail.password,
-                    githubId: users[0].useremail.githubId,
+                    email: users[0].email,
+                    password: users[0].password,
+                    githubId: users[0].githubId,
                   },
                 });
               }}
@@ -51,9 +51,8 @@ function Mypage(props) {
           </div>
         </li>
       </ul>
-      <ul>
-        <CardList userInfo={users} />
-      </ul>
+      <ul>{users[1] !== undefined ? <CardEdit userInfo={users[1]}></CardEdit> : null}</ul>
+      {/* <ul>{users[1] !== undefined ? <CardList userInfo={users[1]}></CardList> : null}</ul> */}
     </div>
   );
 }
