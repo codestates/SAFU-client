@@ -3,7 +3,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 // import CardList from './CardList';
-import CardEdit from './CardEdit';
+import CardEditList from './CardEditList';
 
 function Mypage(props) {
   const [loading, setLoading] = useState(true);
@@ -51,7 +51,7 @@ function Mypage(props) {
           </div>
         </li>
       </ul>
-      <ul>{users[1] !== undefined ? <CardEdit userInfo={users[1]}></CardEdit> : null}</ul>
+      <ul>{users[1] !== undefined ? <CardEditList userInfo={users[1]}></CardEditList> : null}</ul>
       {/* <ul>{users[1] !== undefined ? <CardList userInfo={users[1]}></CardList> : null}</ul> */}
     </div>
   );
