@@ -4,9 +4,7 @@ import axios from 'axios';
 import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 axios.defaults.withCredentials = true;
-const safuID = process.env.GITHUB_CLIENT_ID; //등록 후 결정
-const safuSecret = process.env.GITHUB_CLIENT_SECRET; // 등록 후 결정
-const redirectUri = 'https://9ec7872a98e3.ngrok.io'; //등록 후 결정
+
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -71,16 +69,7 @@ class Login extends React.Component {
           </button>
         </div>
         <div className="social-login-div">
-          <a
-            href={
-              'https://github.com/login/oauth/authorize?client_id=' +
-              safuID +
-              '&redirect_uri=' +
-              redirectUri
-            }
-          >
-            Log in with Github
-          </a>
+          <a href={'http://localhost:4000/auth/github'}>Log in with Github</a>
         </div>
         <div className="find-div">
           <ul>
