@@ -414,3 +414,51 @@ select {
   padding-top: 10px;
   margin-bottom: 12px;
 }
+
+/* cardEdit setting */
+.cardEdit-list {
+  position: relative;
+  width: 1200px;
+  left: 50%;
+  top: 50px;
+  margin-left: -600px;
+}
+.cardEdit-list-div {
+  float: left;
+  border-radius: 30px;
+  width: 300px;
+  margin: 10px 50px 25px 50px;
+  box-shadow: #bababa 0 0 15px;
+  background-image: url(./images/gray.jpg);
+  padding: 15px 0 8px 0;
+  background-size: cover;
+}
+.cardEdit {
+  position: relative;
+  width: 270px;
+}
+
+.cardEdit li {
+  background-color: white;
+  width: 280px;
+  display: block;
+  box-shadow: #bababa 0 0 15px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding-top: 5px;
+}
+.cardEdit li p {
+  margin: 5px 0;
+  font-weight: 600;
+}
+.cardEdit li input,
+select {
+  margin-top: 10px;
+  width: 250px;
+  margin-bottom: 15px;
+}
+.cardEdit button {
+  width: 270px;
+  box-shadow: none;
+}
