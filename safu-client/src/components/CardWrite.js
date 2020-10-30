@@ -14,7 +14,7 @@ class CardWrite extends React.Component {
       level: '쉬움',
       price: '10만원 이하',
       curriculum: '불만족',
-      recommend: '',
+      recommend: '비추천',
     };
     this.handleInputValue = this.handleInputValue.bind(this);
   }
