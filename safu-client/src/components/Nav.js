@@ -64,6 +64,7 @@ class Nav extends React.Component {
             <Switch>
               <Route path="/" exact component={Main}></Route>
               <Route path="/Mypage" component={Mypage}></Route>
+              <Route path="/Login" component={Login}></Route>
               <Route path="/Infoedit" component={Infoedit}></Route>
               <Route path="/CardWrite" component={CardWrite}></Route>
             </Switch>
@@ -98,4 +99,5 @@ class Nav extends React.Component {
     }
   }
 }
+
 export default Nav;
