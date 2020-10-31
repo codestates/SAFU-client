@@ -1,77 +1,32 @@
-//Menu.js - (state에 따라 or 라우팅에 따라) 변경되는 부분: x
-import React, { useState, useEffect } from 'react';
-import safuLogo from '../images/safu_logo.png';
-import axios from 'axios';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import Select from 'react-select';
 
-// axios.defaults.withCredentials = true;
+const options = [
+  { label: 'Code States', bootcamp_id: '3', value: 1 },
+  { label: 'Fast Campus', bootcamp_id: '4', value: 2 },
+  { label: 'Wecode', bootcamp_id: '5', value: 4 },
+  { label: 'Vanilla Coding', bootcamp_id: '6', value: 3 },
+  { label: 'Sparta Codingclub', bootcamp_id: '7', value: 5 },
+  { label: 'Dream Coding', bootcamp_id: '8', value: 6 },
+  { label: 'Nomad Coders', bootcamp_id: '9', value: 7 },
+  { label: 'Code Lion', bootcamp_id: '10', value: 8 },
+];
 
-function Menu() {
-  const [checkAll, setCheckAll] = useState(true);
-  const [bootcampList, setBootcampList] = useState([]);
-
-  useEffect(() => {
-    axios({
-      method: 'get',
-      url: 'http://localhost:4000/bootcamplists',
-    }).then((users) => {
-      setBootcampList(users.data);
-    });
-  }, []);
-
-  console.log();
-  return (
-    <div className="menu-body">
-      <div className="logo">
-        <a href="/">
-          <img src={safuLogo} width="120px" height="120px" />
-        </a>
-        <p>당신에게 가장 잘 맞는 부트캠프는 어디일까요?</p>
-      </div>
-      <div className="bootcamp-list">
-        <div className="select-all-div">
-          {checkAll === true ? (
-            <label className=" selected select-all">
-              <input
-                type="checkbox"
-                className="select-all"
-                id="select-all"
-                name="select-all"
-                value="select-all"
-              ></input>
-              Select All
-            </label>
-          ) : (
-            <label className="select-all">
-              <input
-                type="checkbox"
-                className="select-all"
-                id="select-all"
-                name="select-all"
-                value="select-all"
-              ></input>
-              Select All
-            </label>
-          )}
-        </div>
-        <div className="bootcamp-list-slide-box">
-          {bootcampList.map((bootcamp) => (
-            <div className="bootcamp-div">
-              <label for={bootcamp.id}>
-                <input
-                  type="checkbox"
-                  className="bootcamp-name"
-                  id={bootcamp.id}
-                  name={bootcamp.name}
-                  value={bootcamp.name}
-                ></input>
-                {bootcamp.name}
-              </label>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
+const Menu = ({ onChangeCheckbox, onChange, checked, values }) => (
+  <div className="App">
+    <Select isMulti onChange={onChange} options={options} value={values} />
+    <p>
+      <input
+        onChange={onChangeCheckbox}
+        type="checkbox"
+        id="selectAll"
+        value="selectAll"
+        checked={checked}
+      />
+      <label for="selectAll">Select all</label>
+    </p>
+  </div>
+);
 
 export default Menu;
