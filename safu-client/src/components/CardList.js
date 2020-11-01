@@ -25,7 +25,6 @@ class CardList extends React.Component {
     if (this.props.isLogin) {
       return (
         <div className="card-list">
-          {/* <BrowserRouter> */}
           <div
             className={
               this.state.cardWriteClick === true ? 'add-card-box modal-open' : 'add-card-box'
@@ -49,10 +48,6 @@ class CardList extends React.Component {
           {this.props.userInfo.map((card) => (
             <Card key={card.id} card={card} />
           ))}
-          {/* <Switch>
-              <Route path="/CardWrite" component={CardWrite} />
-            </Switch>
-          </BrowserRouter> */}
         </div>
       );
     } else {
