@@ -406,11 +406,33 @@ select {
   width: 300px;
   display: block;
   box-shadow: #bababa 0 0 15px;
-  border-radius: 25px;
+  border-radius: 20px;
   margin-bottom: 15px;
   height: 100%;
+  padding-bottom: 15px;
 }
 .findId-box li div:first-child {
+  padding-top: 10px;
+  margin-bottom: 12px;
+}
+
+/* findPW setting */
+.findPW-div {
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: 8%;
+}
+.findPW-box li {
+  width: 300px;
+  display: block;
+  box-shadow: #bababa 0 0 15px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  height: 100%;
+  padding-bottom: 15px;
+}
+.findPW-box li div:first-child {
   padding-top: 10px;
   margin-bottom: 12px;
 }

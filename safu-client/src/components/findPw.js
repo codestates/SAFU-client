@@ -44,8 +44,8 @@ class Findpw extends React.Component {
 
   render() {
     return (
-      <div>
-        <ul>
+      <div className="findPW-div">
+        <ul className="findPW-box">
           <li>
             <div>Email</div>
             <input onChange={this.handleFindPwValue('useremail')}></input>
