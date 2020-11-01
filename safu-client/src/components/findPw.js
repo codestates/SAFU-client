@@ -1,8 +1,5 @@
-//findPw.js - state에 따라 or 라우팅에 따라) 변경되는 부분: x
-
 import React from 'react';
 import axios from 'axios';
-import { withRouter } from 'react-router-dom';
 
 class Findpw extends React.Component {
   constructor(props) {

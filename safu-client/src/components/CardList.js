@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
-import Card from './Card';
-import CardWrite from './CardWrite';
-import plus from '../images/plus.png';
+
+import { CardWrite, Card } from '../pages';
 
 //CardList.js - (state에 따라 or 라우팅에 따라) 변경되는 부분:
 //  1. 비로그인시 main => 메뉴에서 특정 bootcamp click시 랜더링 되는 Card 컴포넌트들
@@ -26,34 +25,34 @@ class CardList extends React.Component {
     if (this.props.isLogin) {
       return (
         <div className="card-list">
-          <BrowserRouter>
-            <div
-              className={
-                this.state.cardWriteClick === true ? 'add-card-box modal-open' : 'add-card-box'
-              }
-            >
-              <div className="add-card-div">
-                <Link to="/CardWrite">
-                  <button
-                    className={
-                      this.state.cardWriteClick === true
-                        ? 'add-card-plus modal-open'
-                        : 'add-card-plus'
-                    }
-                    onClick={this.handleCardWriteModal}
-                  >
-                    +
-                  </button>
-                </Link>
-              </div>
+          {/* <BrowserRouter> */}
+          <div
+            className={
+              this.state.cardWriteClick === true ? 'add-card-box modal-open' : 'add-card-box'
+            }
+          >
+            <div className="add-card-div">
+              <Link to="/CardWrite">
+                <button
+                  className={
+                    this.state.cardWriteClick === true
+                      ? 'add-card-plus modal-open'
+                      : 'add-card-plus'
+                  }
+                  onClick={this.handleCardWriteModal}
+                >
+                  +
+                </button>
+              </Link>
             </div>
-            {this.props.userInfo.map((card) => (
-              <Card key={card.id} card={card} />
-            ))}
-            <Switch>
+          </div>
+          {this.props.userInfo.map((card) => (
+            <Card key={card.id} card={card} />
+          ))}
+          {/* <Switch>
               <Route path="/CardWrite" component={CardWrite} />
             </Switch>
-          </BrowserRouter>
+          </BrowserRouter> */}
         </div>
       );
     } else {

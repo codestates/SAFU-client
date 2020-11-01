@@ -11,3 +11,4 @@ export { default as SignUp } from '../components/SignUp';
 export { default as Findid } from '../components/findId';
 export { default as Findpw } from '../components/findPw';
 export { default as Infoedit } from '../components/infoEdit';
+export { default as App } from '../App';
