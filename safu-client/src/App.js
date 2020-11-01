@@ -1,11 +1,9 @@
 import React from 'react';
 import './App.css';
-import Main from './components/Main';
 import Nav from './components/Nav';
-import Menu from './components/Menu';
-import CardList from './components/CardList';
 import axios from 'axios';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -29,8 +27,9 @@ class App extends React.Component {
     return (
       <div>
         <div>
-          {/* Nav component */}
-          <Nav isLogin={this.state.isLogin} />
+          <BrowserRouter>
+            <Nav isLogin={this.state.isLogin} />
+          </BrowserRouter>
         </div>
       </div>
     );
