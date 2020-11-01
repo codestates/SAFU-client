@@ -1,4 +1,3 @@
-//infoEdit.js - state에 따라 or 라우팅에 따라) 변경되는 부분: x
 import React from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
@@ -60,12 +59,10 @@ class Infoedit extends React.Component {
         },
       })
         .then((res) => {
-          //200(OK), 201(Created)
-          this.props.history.push('/Login');
+          window.location = '/Login';
           console.log('개인정보수정 완료');
         })
         .catch((err) => {
-          //500(err)
           console.error(err);
         });
     } else {
@@ -79,13 +76,10 @@ class Infoedit extends React.Component {
       url: 'http://localhost:4000/users/edit/delete',
     })
       .then((res) => {
-        //200(OK)
-        console.log('안전하게 탈퇴처리되었습니다.');
         alert('안전하게 탈퇴처리되었습니다.');
         window.location = '/';
       })
       .catch((err) => {
-        //500(err)
         console.error(err);
       });
   };

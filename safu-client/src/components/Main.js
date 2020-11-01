@@ -1,8 +1,8 @@
 import React from 'react';
 import '../App.css';
-import Menu from './Menu';
-import CardList from './CardList';
+import { Menu, CardList } from '../pages';
 import axios from 'axios';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -36,7 +36,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {/* main component */}
         <div className="main-body">
           <Menu />
           <CardList isLogin={this.state.isLogin} userInfo={this.state.userInfo} />

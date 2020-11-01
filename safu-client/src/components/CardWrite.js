@@ -1,6 +1,7 @@
 //CardWrite.js - state에 따라 or 라우팅에 따라) 변경되는 부분: 이 컴폰넌트 내에선 어벗지만 Review 등록 url이냐 수정 url이냐에 따라 버튼만 제출하기/수정하기로 변경
 import React from 'react';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 axios.defaults.withCredentials = true;
 
@@ -32,7 +33,7 @@ class CardWrite extends React.Component {
             axios
               .post('http://localhost:4000/reviews/create', this.state)
               .then((res) => {
-                window.location = '/';
+                this.props.history.push('/');
               })
               .catch((err) => {
                 alert('failed to create');
@@ -129,4 +130,4 @@ class CardWrite extends React.Component {
     );
   }
 }
-export default CardWrite;
+export default withRouter(CardWrite);
