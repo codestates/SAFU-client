@@ -180,8 +180,13 @@ button {
 
 /* card setting */
 ul.card {
-  width: 270px;
+  overflow: auto;
+  height: 565px;
+  width: 300px;
   position: relative;
+}
+ul.card::-webkit-scrollbar {
+  display: none;
 }
 ul.card li {
   display: block;
@@ -252,20 +257,21 @@ ul.card li p:last-child {
   position: absolute;
   width: 960px;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
+  top: 70px;
+  left: 50%;
+  margin-left: -480px;
 }
 .card-write ul {
-  width: 300px;
-  background-image: url(./images/purple.jpg);
+  width: 330px;
+  background-image: url(./images/cardBackgound.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
   box-shadow: #bababa 0 0 15px;
   border-radius: 30px;
   padding: 15px 0 8px 0;
   margin-top: 10px;
   margin-bottom: 30px;
-  margin-left: 330px;
-  background-repeat: no-repeat;
-}
-.card-write ul {
+  margin-left: 305px;
   padding-top: 15px;
 }
 .card-write li {
@@ -275,7 +281,7 @@ ul.card li p:last-child {
   box-shadow: #bababa 0 0 15px;
   border-radius: 20px;
   margin-bottom: 10px;
-  margin-left: 10px;
+  margin-left: 25px;
   padding-top: 5px;
 }
 .card-write li p {
