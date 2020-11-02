@@ -1,39 +1,51 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import Main from './components/Main';
 import Nav from './components/Nav';
-import Menu from './components/Menu';
-import CardList from './components/CardList';
 import axios from 'axios';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLogin: false,
-    };
+
+function App() {
+  const [isLogin, setIsLogin] = useState(false);
+  const [options, setOptions] = useState([]);
+
+  useEffect(() => {
     axios({
       method: 'get',
+      url: 'http://localhost:4000/bootcamplists',
+    }).then((datas) => {
+      var bootcampOptions = [];
+      datas.data.forEach((x) => {
+        bootcampOptions.push({ label: x.name, bootcamp_id: x.id, value: x.id });
+      });
+      setOptions(bootcampOptions);
+    });
+  }, []);
+
+  useEffect(() => {
+    axios({
+      method: 'post',
       url: 'http://localhost:4000/reviews',
+      data: {
+        bootcampList: options,
+      },
     })
       .then((res) => {
+        console.log(res);
         if (res.data[1] !== undefined && res.data[1].isLogin === true) {
-          this.setState({ isLogin: true });
+          setIsLogin(true);
         }
       })
       .catch((err) => {
         console.error(err);
       });
-  }
-  render() {
-    return (
+  });
+
+  return (
+    <div>
       <div>
-        <div>
-          {/* Nav component */}
-          <Nav isLogin={this.state.isLogin} />
-        </div>
+        {/* Nav component */}
+        <Nav isLogin={isLogin} />
       </div>
-    );
-  }
+    </div>
+  );
 }
 export default App;

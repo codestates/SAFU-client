@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import safuLogo from '../images/safu_logo.png';
 import axios from 'axios';
 
-// axios.defaults.withCredentials = true;
+axios.defaults.withCredentials = true;
 
 function Menu() {
   const [checkAll, setCheckAll] = useState(true);

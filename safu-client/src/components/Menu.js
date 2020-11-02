@@ -1,32 +1,40 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
+import axios from 'axios';
 
-const options = [
-  { label: 'Code States', bootcamp_id: '3', value: 1 },
-  { label: 'Fast Campus', bootcamp_id: '4', value: 2 },
-  { label: 'Wecode', bootcamp_id: '5', value: 4 },
-  { label: 'Vanilla Coding', bootcamp_id: '6', value: 3 },
-  { label: 'Sparta Codingclub', bootcamp_id: '7', value: 5 },
-  { label: 'Dream Coding', bootcamp_id: '8', value: 6 },
-  { label: 'Nomad Coders', bootcamp_id: '9', value: 7 },
-  { label: 'Code Lion', bootcamp_id: '10', value: 8 },
-];
+axios.defaults.withCredentials = true;
 
-const Menu = ({ onChangeCheckbox, onChange, checked, values }) => (
-  <div className="App">
-    <Select isMulti onChange={onChange} options={options} value={values} />
-    <p>
-      <input
-        onChange={onChangeCheckbox}
-        type="checkbox"
-        id="selectAll"
-        value="selectAll"
-        checked={checked}
-      />
-      <label for="selectAll">Select all</label>
-    </p>
-  </div>
-);
+const Menu = ({ onChangeCheckbox, onChange, checked, values }) => {
+  const [options, setOptions] = useState([]);
+
+  useEffect(() => {
+    axios({
+      method: 'get',
+      url: 'http://localhost:4000/bootcamplists',
+    }).then((datas) => {
+      var bootcampOptions = [];
+      datas.data.forEach((x) => {
+        bootcampOptions.push({ label: x.name, bootcamp_id: x.id, value: x.id });
+      });
+      setOptions(bootcampOptions);
+    });
+  }, []);
+
+  return (
+    <div className="App">
+      <Select isMulti onChange={onChange} options={options} value={values} />
+      <p>
+        <input
+          onChange={onChangeCheckbox}
+          type="checkbox"
+          id="selectAll"
+          value="selectAll"
+          checked={checked}
+        />
+        <label for="selectAll">All at once</label>
+      </p>
+    </div>
+  );
+};
 
 export default Menu;
