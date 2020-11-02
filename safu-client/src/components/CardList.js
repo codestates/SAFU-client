@@ -42,6 +42,7 @@ class CardList extends React.Component {
           {this.props.userInfo.map((card) => (
             <Card key={card.id} card={card} />
           ))}
+          <div className="fontType-logo"></div>
         </div>
       );
     } else {
@@ -50,6 +51,7 @@ class CardList extends React.Component {
           {this.props.userInfo.map((card) => (
             <Card key={card.id} card={card} />
           ))}
+          <div className="fontType-logo"></div>
         </div>
       );
     }

@@ -20,18 +20,18 @@ function Mypage(props) {
   }, []);
   if (loading) return <div>Loading...</div>;
   return (
-    <div>
-      <ul>
-        <li>
+    <div className="mypage-div">
+      <ul className="mypage-ul">
+        <li className="mypage-email mypage-li">
           {console.log('users', users[0])}
           <p>E-mail</p>
           <p>{users[0].email}</p>
         </li>
-        <li>
+        <li className="mypage-githubID mypage-li">
           <p>Github ID</p>
           <p>{users[0].githubId}</p>
         </li>
-        <li>
+        <li className="mypage-infoEdit mypage-li">
           <div>
             <button
               onClick={(e) => {
@@ -51,7 +51,15 @@ function Mypage(props) {
           </div>
         </li>
       </ul>
-      <ul>{users[1] !== undefined ? <CardEditList userInfo={users[1]}></CardEditList> : null}</ul>
+      <ul>
+        {users[1] !== undefined ? (
+          <CardEditList userInfo={users[1]}></CardEditList>
+        ) : (
+          <p>
+            아직 작성된 카드가 없습니다.<br></br> 후기를 등록해보세요!
+          </p>
+        )}
+      </ul>
       {/* <ul>{users[1] !== undefined ? <CardList userInfo={users[1]}></CardList> : null}</ul> */}
     </div>
   );

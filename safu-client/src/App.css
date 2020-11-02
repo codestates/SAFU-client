@@ -154,6 +154,7 @@ button {
   left: 50%;
   top: 400px;
   margin-left: -480px;
+  margin-bottom: 50px;
 }
 .card-list-entry {
   float: left;
@@ -260,13 +261,6 @@ ul.card li p:last-child {
   top: 285px;
   position: absolute;
   margin: -55px 0px 0px -45px;
-}
-.add-card-box.modal-open {
-  position: relative;
-}
-.add-card-plus.modal-open {
-  margin-left: -45px;
-  margin-top: -55px;
 }
 .card-write-div {
   position: absolute;
@@ -461,18 +455,18 @@ select {
 /* cardEdit setting */
 .cardEdit-list {
   position: relative;
-  width: 1200px;
+  width: 990px;
   left: 50%;
   top: 50px;
-  margin-left: -600px;
+  margin-left: -495px;
 }
 .cardEdit-list-div {
   float: left;
   border-radius: 30px;
   width: 300px;
-  margin: 10px 50px 25px 50px;
+  margin: 10px 15px 25px 15px;
   box-shadow: #bababa 0 0 15px;
-  background-image: url(./images/gray.jpg);
+  background-image: url(./images/cardBackgound.jpg);
   padding: 15px 0 8px 0;
   background-size: cover;
 }
@@ -504,4 +498,65 @@ select {
 .cardEdit button {
   width: 270px;
   box-shadow: none;
+}
+
+/* mypage setting */
+.mypage-div {
+  position: absolute;
+  width: 960px;
+  height: 100%;
+  top: 70px;
+  left: 50%;
+  margin-left: -480px;
+}
+.mypage-ul {
+  width: 300px;
+  height: 250px;
+  background-image: url(./images/gray.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: #bababa 0 0 15px;
+  border-radius: 30px;
+  padding: 15px 0 8px 0;
+  margin-top: 30px;
+  margin-left: 330px;
+  padding-top: 15px;
+}
+.mypage-li {
+  background-color: white;
+  width: 280px;
+  display: block;
+  box-shadow: #bababa 0 0 15px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  margin-left: 10px;
+  padding-top: 5px;
+}
+.mypage-li:first-child {
+  margin-top: 5px;
+}
+.mypage-li p:first-child {
+  margin: 5px 15px;
+  text-align: left;
+}
+.mypage-li p:last-child {
+  margin: 5px 15px;
+  padding-bottom: 10px;
+  text-align: right;
+}
+.mypage-div ul button {
+  box-shadow: none;
+}
+
+/* footer logo setting */
+.fontType-logo {
+  position: absolute;
+  bottom: -100px;
+  width: 160px;
+  height: 80px;
+  background-image: url(./images/fontType_logo.png);
+  background-size: cover;
+  left: 50%;
+  margin-left: -80px;
+  margin-bottom: 25px;
 }
