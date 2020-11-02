@@ -30,7 +30,7 @@
    ---
 
 # Workflow :construction_worker: :wrench: :hammer: 
-### CLient-side   
+### CLient-side(Client flow)   
 ![aaa](https://user-images.githubusercontent.com/8890754/97907141-2b0d9400-1d88-11eb-9a37-7edd70e97313.png)
-### Server-side   
+### Server-side(DB Schema)   
 ![b](https://user-images.githubusercontent.com/8890754/97907959-62307500-1d89-11eb-8cfa-867055339cc5.png)
