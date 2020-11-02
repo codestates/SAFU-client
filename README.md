@@ -33,4 +33,4 @@
 ### CLient-side(Client flow)   
 ![aaa](https://user-images.githubusercontent.com/8890754/97907141-2b0d9400-1d88-11eb-9a37-7edd70e97313.png)
 ### Server-side(DB Schema)   
-![b](https://user-images.githubusercontent.com/8890754/97907959-62307500-1d89-11eb-8cfa-867055339cc5.png)
+![b](https://user-images.githubusercontent.com/8890754/97908275-d1a66480-1d89-11eb-9e4e-7e66e77b98c8.png)
