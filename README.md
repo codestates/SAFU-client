@@ -30,5 +30,6 @@
    ---
 
 # Workflow :construction_worker: :wrench: :hammer: 
-![스크린샷 2020-11-03 오전 3 48 13](https://user-images.githubusercontent.com/8890754/97906898-c5210c80-1d87-11eb-884f-abdf92149fcf.png)
-
+### CLient-side   
+![aaa](https://user-images.githubusercontent.com/8890754/97907141-2b0d9400-1d88-11eb-9a37-7edd70e97313.png)
+### Server-side   
