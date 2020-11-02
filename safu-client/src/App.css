@@ -80,33 +80,44 @@ button {
   margin-left: -480px;
   text-align: center;
 }
+.bootcamp-list-slide-box {
+  /* white-space: nowrap;
+  overflow: auto; */
+  width: 810px;
+  position: absolute;
+  left: 0;
+  top: 30px;
+}
 .select-all-div {
   padding-right: 20px;
   float: left;
-  width: auto;
+  width: 100%;
   height: 30px;
   margin-top: 15px;
   padding: 18px 0 25px 0;
 }
-.select-all {
-  margin-left: 0 !important;
+.selectAll {
+  right: 0;
+  top: 280px;
+  position: absolute;
+  box-shadow: none !important;
+  margin-top: -50px !important;
 }
-.bootcamp-list-slide-box {
-  white-space: nowrap;
-  overflow: auto;
+.css-1rhbuit-multiValue {
+  background-color: white !important;
 }
-.bootcamp-list-slide-box::-webkit-scrollbar {
+/* .bootcamp-list-slide-box::-webkit-scrollbar {
   background-color: #e1e1e1;
   border-radius: 5px;
   height: 10px;
   background-clip: padding-box;
   border: 4px solid transparent;
 }
+
 .bootcamp-list-slide-box::-webkit-scrollbar-thumb {
-  background-color: #6b5fd0;
   opacity: 0.5;
   border-radius: 5px;
-}
+} */
 .menu-body input[type='checkbox'] {
   white-space: nowrap;
   overflow: auto;
@@ -143,6 +154,7 @@ button {
   left: 50%;
   top: 400px;
   margin-left: -480px;
+  margin-bottom: 50px;
 }
 .card-list-entry {
   float: left;
@@ -249,13 +261,6 @@ ul.card li p:last-child {
   top: 285px;
   position: absolute;
   margin: -55px 0px 0px -45px;
-}
-.add-card-box.modal-open {
-  position: relative;
-}
-.add-card-plus.modal-open {
-  margin-left: -45px;
-  margin-top: -55px;
 }
 .card-write-div {
   position: absolute;
@@ -450,18 +455,18 @@ select {
 /* cardEdit setting */
 .cardEdit-list {
   position: relative;
-  width: 1200px;
+  width: 990px;
   left: 50%;
   top: 50px;
-  margin-left: -600px;
+  margin-left: -495px;
 }
 .cardEdit-list-div {
   float: left;
   border-radius: 30px;
   width: 300px;
-  margin: 10px 50px 25px 50px;
+  margin: 10px 15px 25px 15px;
   box-shadow: #bababa 0 0 15px;
-  background-image: url(./images/gray.jpg);
+  background-image: url(./images/cardBackgound.jpg);
   padding: 15px 0 8px 0;
   background-size: cover;
 }
@@ -493,4 +498,65 @@ select {
 .cardEdit button {
   width: 270px;
   box-shadow: none;
+}
+
+/* mypage setting */
+.mypage-div {
+  position: absolute;
+  width: 960px;
+  height: 100%;
+  top: 70px;
+  left: 50%;
+  margin-left: -480px;
+}
+.mypage-ul {
+  width: 300px;
+  height: 250px;
+  background-image: url(./images/gray.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: #bababa 0 0 15px;
+  border-radius: 30px;
+  padding: 15px 0 8px 0;
+  margin-top: 30px;
+  margin-left: 330px;
+  padding-top: 15px;
+}
+.mypage-li {
+  background-color: white;
+  width: 280px;
+  display: block;
+  box-shadow: #bababa 0 0 15px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  margin-left: 10px;
+  padding-top: 5px;
+}
+.mypage-li:first-child {
+  margin-top: 5px;
+}
+.mypage-li p:first-child {
+  margin: 5px 15px;
+  text-align: left;
+}
+.mypage-li p:last-child {
+  margin: 5px 15px;
+  padding-bottom: 10px;
+  text-align: right;
+}
+.mypage-div ul button {
+  box-shadow: none;
+}
+
+/* footer logo setting */
+.fontType-logo {
+  position: absolute;
+  bottom: -100px;
+  width: 160px;
+  height: 80px;
+  background-image: url(./images/fontType_logo.png);
+  background-size: cover;
+  left: 50%;
+  margin-left: -80px;
+  margin-bottom: 25px;
 }

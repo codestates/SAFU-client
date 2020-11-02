@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import Nav from './components/Nav';
 import axios from 'axios';
@@ -42,9 +43,9 @@ function App() {
   return (
     <div>
       <div>
-          <BrowserRouter>
-            <Nav isLogin={isLogin} />
-          </BrowserRouter>
+        <BrowserRouter>
+          <Nav isLogin={isLogin} />
+        </BrowserRouter>
       </div>
     </div>
   );
