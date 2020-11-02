@@ -57,7 +57,7 @@ class App extends React.Component {
   }
 
   onChangeCheckbox = (e) => {
-    const isChecked = !this.state.checked;
+    const isChecked = this.state.checked ? true : !this.state.checked;
     const addValue = isChecked ? this.bootcampOptions : this.state.values;
 
     this.setState({

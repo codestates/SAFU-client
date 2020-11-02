@@ -80,33 +80,44 @@ button {
   margin-left: -480px;
   text-align: center;
 }
+.bootcamp-list-slide-box {
+  /* white-space: nowrap;
+  overflow: auto; */
+  width: 810px;
+  position: absolute;
+  left: 0;
+  top: 30px;
+}
 .select-all-div {
   padding-right: 20px;
   float: left;
-  width: auto;
+  width: 100%;
   height: 30px;
   margin-top: 15px;
   padding: 18px 0 25px 0;
 }
-.select-all {
-  margin-left: 0 !important;
+.selectAll {
+  right: 0;
+  top: 280px;
+  position: absolute;
+  box-shadow: none !important;
+  margin-top: -50px !important;
 }
-.bootcamp-list-slide-box {
-  white-space: nowrap;
-  overflow: auto;
+.css-1rhbuit-multiValue {
+  background-color: white !important;
 }
-.bootcamp-list-slide-box::-webkit-scrollbar {
+/* .bootcamp-list-slide-box::-webkit-scrollbar {
   background-color: #e1e1e1;
   border-radius: 5px;
   height: 10px;
   background-clip: padding-box;
   border: 4px solid transparent;
 }
+
 .bootcamp-list-slide-box::-webkit-scrollbar-thumb {
-  background-color: #6b5fd0;
   opacity: 0.5;
   border-radius: 5px;
-}
+} */
 .menu-body input[type='checkbox'] {
   white-space: nowrap;
   overflow: auto;
