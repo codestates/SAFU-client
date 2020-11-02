@@ -1,18 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 axios.defaults.withCredentials = true;
 
 function CardEdit(card) {
   const [bootcampname, setName] = useState(card.card.bootcampname.name);
-  const [price, setprice] = useState(card.card.price);
-  const [comment, setcomment] = useState(card.card.comment);
   const [githublink, setgithublink] = useState(card.card.githublink);
   const [level, setlevel] = useState(card.card.level);
+  const [price, setprice] = useState(card.card.price);
   const [curriculum, setcurriculum] = useState(card.card.curriculum);
   const [recommend, setrecommend] = useState(card.card.recommend);
-  console.log('card:', card);
-  // console.log(bootcampname, price, comment, githublink, level, curriculum, recommend);
+  const [comment, setcomment] = useState(card.card.comment);
+  const [bootcampname_before, setBootcampnameBefore] = useState(bootcampname);
+
+  useEffect(() => {
+    axios({
+      method: 'post',
+      url: 'http://localhost:4000//reviews/edit',
+      data: {
+        comment: comment,
+        bootcampname: bootcampname,
+        githublink: githublink,
+        level: level,
+        price: price,
+        curriculum: curriculum,
+        recommend: recommend,
+        bootcampname_before: bootcampname_before,
+      },
+    }).then((req) => {
+      console.log(req.data);
+    });
+  }, []);
 
   return (
     <div className="cardEdit-list-entry">
@@ -20,7 +38,12 @@ function CardEdit(card) {
         <ul className="cardEdit">
           <li className="cardEdit-title">
             <p>부트 캠프 선택</p>
-            <select required>
+            <select
+              required
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+            >
               <option value="" disabled>
                 부트 캠프 선택
               </option>
@@ -49,11 +72,23 @@ function CardEdit(card) {
           </li>
           <li>
             <p>Github 프로필 주소</p>
-            <input type="text" placeholder={githublink} required />
+            <input
+              type="text"
+              placeholder={githublink}
+              required
+              onChange={(e) => {
+                setgithublink(e.target.value);
+              }}
+            />
           </li>
           <li className="level">
             <p>난이도</p>
-            <select required>
+            <select
+              required
+              onChange={(e) => {
+                setlevel(e.target.value);
+              }}
+            >
               <option value="" disabled>
                 난이도 선택
               </option>
@@ -82,7 +117,12 @@ function CardEdit(card) {
           </li>
           <li className="price">
             <p>비용</p>
-            <select required>
+            <select
+              required
+              onChange={(e) => {
+                setprice(e.target.value);
+              }}
+            >
               <option value="" disabled>
                 비용 선택
               </option>
@@ -125,7 +165,12 @@ function CardEdit(card) {
           </li>
           <li className="curriculum">
             <p>커리큘럼</p>
-            <select required>
+            <select
+              required
+              onChange={(e) => {
+                setcurriculum(e.target.value);
+              }}
+            >
               <option value="" disabled>
                 커리큘럼 만족도 선택
               </option>
@@ -161,7 +206,12 @@ function CardEdit(card) {
           </li>
           <li className="recommend">
             <p>추천도</p>
-            <select required>
+            <select
+              required
+              onChange={(e) => {
+                setrecommend(e.target.value);
+              }}
+            >
               <option value="" disabled>
                 추천도 선택
               </option>
@@ -197,7 +247,14 @@ function CardEdit(card) {
           </li>
           <li className="comment">
             <p>한마디</p>
-            <input type="text" placeholder={comment} required />
+            <input
+              type="text"
+              placeholder={comment}
+              required
+              onChange={(e) => {
+                setcomment(e.target.value);
+              }}
+            />
           </li>
           <li>
             <button type="submit">summit</button>
