@@ -1,14 +1,12 @@
-//infoEdit.js - state에 따라 or 라우팅에 따라) 변경되는 부분: x
 import React from 'react';
 import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 axios.defaults.withCredentials = true;
 
 class Infoedit extends React.Component {
   constructor(props) {
     super(props);
-    // const userInfo = props.history.location.userInfo;
 
-    // console.log('EdituserInfo: ', props.history.location.userInfo);
     this.state = {
       useremail: this.props.history.location.userInfo.email,
       password: this.props.history.location.userInfo.password,
@@ -18,6 +16,7 @@ class Infoedit extends React.Component {
       isAvailedPasswordCheck: '',
     };
   }
+
   handleInfoEditValue = (key) => (e) => {
     if (key === 'password') {
       var reg = /^(?=.*?[a-z])(?=.*?[0-9]).{8,}$/;
@@ -47,11 +46,12 @@ class Infoedit extends React.Component {
       this.setState({ [key]: e.target.value });
     }
   };
+
   handleInfoEditButton = () => {
     if (this.state.isAvailedPassword === '' && this.state.isAvailedPasswordCheck === '') {
       axios({
-        method: 'post',
-        url: 'http://localhost:4000/users/signup', //회원가입 API로도 잘 작동합니다. 다만 있던 회원정보는 그대로 있고, 새로운 히원정보가 생기는 것과 마찬가지가 됩니다. 즉, 비번을 여기서 수정해줬더라도 예전 비밀번호로도 로그인이 되게 됩니다.
+        method: 'put',
+        url: 'http://localhost:4000/users/edit',
         data: {
           useremail: this.state.useremail,
           password: this.state.password,
@@ -59,34 +59,31 @@ class Infoedit extends React.Component {
         },
       })
         .then((res) => {
-          //200(OK), 201(Created)
-          this.props.history.push('/Mypage');
+          window.location = '/Login';
           console.log('개인정보수정 완료');
         })
         .catch((err) => {
-          //500(err)
           console.error(err);
         });
     } else {
       alert('수정할 것이 없습니다.');
     }
   };
+
   handleDeactivateButton = () => {
     axios({
       method: 'delete',
       url: 'http://localhost:4000/users/edit/delete',
     })
       .then((res) => {
-        //200(OK)
-        console.log('안전하게 탈퇴처리되었습니다.');
         alert('안전하게 탈퇴처리되었습니다.');
         window.location = '/';
       })
       .catch((err) => {
-        //500(err)
         console.error(err);
       });
   };
+
   render() {
     return (
       <div className="signup-div">
@@ -145,4 +142,5 @@ class Infoedit extends React.Component {
     );
   }
 }
-export default Infoedit;
+
+export default withRouter(Infoedit);

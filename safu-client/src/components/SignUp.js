@@ -88,12 +88,9 @@ class SignUp extends React.Component {
         },
       })
         .then((res) => {
-          //200(OK), 201(Created)
           this.props.history.push('/Login');
-          console.log('회원가입 완료');
         })
         .catch((err) => {
-          //500(err)
           console.error(err);
         });
     } else {
@@ -101,7 +98,6 @@ class SignUp extends React.Component {
     }
   };
   render() {
-    const { history } = this.props;
     return (
       <div className="signup-div">
         <ul className="signup-box">

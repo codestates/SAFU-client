@@ -1,4 +1,3 @@
-//findId.js - state에 따라 or 라우팅에 따라) 변경되는 부분: x
 import React from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
@@ -9,10 +8,11 @@ class Findid extends React.Component {
     this.state = {};
     this.githubId = '';
   }
+
   handleFindIdValue = () => (e) => {
     this.githubId = e.target.value;
-    // console.log(this.githubId);
   };
+
   handleFindIdButton = () => {
     axios({
       method: 'post',
@@ -22,22 +22,17 @@ class Findid extends React.Component {
       },
     })
       .then((res) => {
-        //status 200
         if (res.data !== null) {
-          alert('회원님의 email은 ' + res.data + ' 입니다. 로그인 페이지로 이동하시겠습니까?'); // alert부분, API 구현 완료시 modal창으로 바꿀 것임.
-          //확인 버튼을 누르면,
-          // this.props.history.push('/login');
-          window.location = '/Login';
+          alert('회원님의 email은 ' + res.data + ' 입니다. 로그인 페이지로 이동하시겠습니까?');
+          this.props.history.push('/Login');
         } else {
           alert('회원 정보가 존재하지 않습니다.');
         }
       })
       .catch((err) => {
-        //status 400 Bad request
         if (err.message === 'Request failed with status code 400') {
           alert('올바른 Github 메세지를 입력해주세요');
         } else {
-          //status 500
           console.error(err);
         }
       });

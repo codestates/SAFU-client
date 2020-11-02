@@ -42,8 +42,9 @@ function App() {
   return (
     <div>
       <div>
-        {/* Nav component */}
-        <Nav isLogin={isLogin} />
+          <BrowserRouter>
+            <Nav isLogin={isLogin} />
+          </BrowserRouter>
       </div>
     </div>
   );

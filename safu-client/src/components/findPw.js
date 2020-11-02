@@ -1,8 +1,5 @@
-//findPw.js - state에 따라 or 라우팅에 따라) 변경되는 부분: x
-
 import React from 'react';
 import axios from 'axios';
-import { withRouter } from 'react-router-dom';
 
 class Findpw extends React.Component {
   constructor(props) {
@@ -47,8 +44,8 @@ class Findpw extends React.Component {
 
   render() {
     return (
-      <div>
-        <ul>
+      <div className="findPW-div">
+        <ul className="findPW-box">
           <li>
             <div>Email</div>
             <input onChange={this.handleFindPwValue('useremail')}></input>
