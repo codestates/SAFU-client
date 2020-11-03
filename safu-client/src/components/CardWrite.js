@@ -16,8 +16,20 @@ class CardWrite extends React.Component {
       price: '10만원 이하',
       curriculum: '불만족',
       recommend: '비추천',
+      bootcamplist: [],
     };
     this.handleInputValue = this.handleInputValue.bind(this);
+    axios({
+      method: 'get',
+      url: 'http://localhost:4000/bootcamplists',
+    })
+      .then((datas) => {
+        const map1 = datas.data.map((x) => x.name);
+        this.setState({ bootcamplist: map1 });
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }
 
   handleInputValue = (key) => (e) => {
@@ -49,9 +61,9 @@ class CardWrite extends React.Component {
                   <option value="" disabled defaultValue>
                     부트 캠프 선택
                   </option>
-                  <option value="Code States">Code States</option>
-                  <option value="Fast Campus">Fast Campus</option>
-                  <option value="Vanilla Coding">Vanilla Coding</option>
+                  {this.state.bootcamplist.map((bootcamp) => (
+                    <option value={bootcamp}>{bootcamp}</option>
+                  ))}
                 </select>
               </li>
               <li>

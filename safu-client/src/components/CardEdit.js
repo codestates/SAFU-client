@@ -12,11 +12,12 @@ function CardEdit(card) {
   const [recommend, setrecommend] = useState(card.card.recommend);
   const [comment, setcomment] = useState(card.card.comment);
   const [bootcampname_before, setBootcampnameBefore] = useState(bootcampname);
+  const [bootcamplist, setbootcamplist] = useState([]);
 
   useEffect(() => {
     axios({
       method: 'post',
-      url: 'http://localhost:4000//reviews/edit',
+      url: 'http://localhost:4000/reviews/edit',
       data: {
         comment: comment,
         bootcampname: bootcampname,
@@ -30,6 +31,20 @@ function CardEdit(card) {
     }).then((req) => {
       console.log(req.data);
     });
+  }, []);
+
+  useEffect(() => {
+    axios({
+      method: 'get',
+      url: 'http://localhost:4000/bootcamplists',
+    })
+      .then((datas) => {
+        const map1 = datas.data.map((x) => x.name);
+        setbootcamplist(map1);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }, []);
 
   return (
@@ -47,26 +62,14 @@ function CardEdit(card) {
               <option value="" disabled>
                 부트 캠프 선택
               </option>
-              {bootcampname === 'Code States' ? (
-                <option value="Code States" selected>
-                  Code States
-                </option>
-              ) : (
-                <option value="Code States">Code States</option>
-              )}
-              {bootcampname === 'Fast Campus' ? (
-                <option value="Fast Campus" selected>
-                  Fast Campus
-                </option>
-              ) : (
-                <option value="Fast Campus">Fast Campus</option>
-              )}
-              {bootcampname === 'Vanilla Coding' ? (
-                <option value="Vanilla Coding" selected>
-                  Vanilla Coding
-                </option>
-              ) : (
-                <option value="Vanilla Coding">Vanilla Coding</option>
+              {bootcamplist.map((bootcamp) =>
+                bootcampname === bootcamp ? (
+                  <option value={bootcamp} selected>
+                    {bootcamp}
+                  </option>
+                ) : (
+                  <option value={bootcamp}>{bootcamp}</option>
+                ),
               )}
             </select>
           </li>
