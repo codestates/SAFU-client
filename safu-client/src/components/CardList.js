@@ -39,21 +39,21 @@ class CardList extends React.Component {
               </Link>
             </div>
           </div>
-          {this.props.userInfo.map((card) => (
-            <Card key={card.id} card={card} />
-          ))}
+          {this.props.userInfo.length !== 0
+            ? this.props.userInfo.map((card) => <Card key={card.id} card={card} />)
+            : null}
           <div className="fontType-logo"></div>
         </div>
       );
     } else {
-      return (
+      return this.props.userInfo.length !== 0 ? (
         <div className="card-list">
           {this.props.userInfo.map((card) => (
             <Card key={card.id} card={card} />
           ))}
           <div className="fontType-logo"></div>
         </div>
-      );
+      ) : null;
     }
   }
 }
