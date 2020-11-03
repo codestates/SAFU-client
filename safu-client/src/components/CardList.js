@@ -19,21 +19,10 @@ class CardList extends React.Component {
     if (this.props.isLogin) {
       return (
         <div className="card-list">
-          <div
-            className={
-              this.state.cardWriteClick === true ? 'add-card-box modal-open' : 'add-card-box'
-            }
-          >
+          <div className="add-card-box">
             <div className="add-card-div">
               <Link to="/CardWrite">
-                <button
-                  className={
-                    this.state.cardWriteClick === true
-                      ? 'add-card-plus modal-open'
-                      : 'add-card-plus'
-                  }
-                  onClick={this.handleCardWriteModal}
-                >
+                <button className="add-card-plus" onClick={this.handleCardWriteModal}>
                   +
                 </button>
               </Link>
