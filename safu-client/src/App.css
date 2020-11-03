@@ -163,16 +163,31 @@ button {
   width: 300px;
   margin: 10px 10px 25px 10px;
   box-shadow: #bababa 0 0 15px;
+  background-position: center;
 }
-.card-list-entry.Code.States,
-.card-list-entry.codestates {
-  background-image: url(./images/red.jpg);
+.card-list-entry.Code.States {
+  background-image: url(./images/CodeStates.jpg);
 }
 .card-list-entry.Fast.Campus {
-  background-image: url(./images/green.jpg);
+  background-image: url(./images/FastCampus.jpg);
+}
+.card-list-entry.Wecode {
+  background-image: url(./images/Wecode.jpg);
 }
 .card-list-entry.Vanilla.Coding {
-  background-image: url(./images/yellow.jpg);
+  background-image: url(./images/VanillaCoding.jpg);
+}
+.card-list-entry.Sparta.Codingclub {
+  background-image: url(./images/SpartaCodingclub.jpg);
+}
+.card-list-entry.Dream.Coding {
+  background-image: url(./images/DreamCoding.jpg);
+}
+.card-list-entry.Nomad.Coders {
+  background-image: url(./images/NomadCoders.jpg);
+}
+.card-list-entry.Code.Lion {
+  background-image: url(./images/CodeLion.jpg);
 }
 .add-card-div {
   float: left;
@@ -261,7 +276,7 @@ ul.card li p:last-child {
   width: 100px;
   height: 100px;
   border-radius: 25px;
-  color: #bababa;
+  color: #778899;
   font-size: 90px;
   line-height: 1;
   top: 285px;
