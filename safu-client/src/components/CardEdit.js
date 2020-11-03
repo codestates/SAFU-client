@@ -26,9 +26,19 @@ function handleCardEdit(
       recommend: recommend,
       bootcampname_before: bootcampname_before,
     },
-  }).then((req) => {
-    console.log(req.data);
-  });
+  })
+    .then((req) => {
+      alert('수정이 완료되었습니다.');
+    })
+    .catch((err) => {
+      if (err.message === 'Request failed with status code 409') {
+        alert(
+          '해당 부트캠프의 리뷰를 이미 작성한 적이 있습니다. 해당 카드에서 내용을 수정해주세요.',
+        );
+      } else {
+        console.error(err);
+      }
+    });
 }
 
 function handleCardDelete(bootcampname) {
@@ -317,7 +327,6 @@ function CardEdit(card) {
                     bootcampname_before,
                   );
                 }
-                alert('수정이 완료되었습니다.');
               }}
             >
               summit
