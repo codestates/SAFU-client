@@ -233,12 +233,18 @@ ul.card li p:last-child {
 .bootcamp-name {
   font-size: 24px !important;
 }
-.card-title:first-child a {
+.card-title a {
+  width: 250px;
+  height: 17px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   color: #6b5fd0;
   font-size: 14px;
   font-weight: 500;
   display: block;
   text-align: right;
+  margin-left: 10px;
   margin-top: 20px;
   margin-right: 10px;
   margin-bottom: -18px;
@@ -459,6 +465,11 @@ select {
   left: 50%;
   top: 50px;
   margin-left: -495px;
+  margin-bottom: 50px;
+}
+.cardEdit-list-before-message {
+  margin-top: 10px;
+  margin-bottom: 40px;
 }
 .cardEdit-list-div {
   float: left;
@@ -495,9 +506,32 @@ select {
   width: 250px;
   margin-bottom: 15px;
 }
-.cardEdit button {
-  width: 270px;
+.cardEdit li:last-child {
+  background: none;
   box-shadow: none;
+}
+.cardEdit button {
+  box-shadow: #bababa 0 0 15px !important;
+  width: 270px;
+}
+.cardEdit button:first-child {
+  margin-bottom: 15px;
+}
+.cardEdit button:last-child {
+  position: absolute;
+  z-index: 10;
+  background-color: rgb(196, 67, 67);
+  font-size: 0px;
+  width: 35px;
+  height: 35px;
+  top: -25px;
+  right: -40px;
+}
+.cardEdit button:last-child:before {
+  content: 'X';
+  font-size: 15px;
+  color: white;
+  display: block;
 }
 
 /* mypage setting */
