@@ -3,6 +3,12 @@ import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 axios.defaults.withCredentials = true;
 
+const crypto = require('crypto');
+
+const hash = function (password) {
+  return crypto.createHash('sha512').update(password).digest('hex');
+};
+
 class Infoedit extends React.Component {
   constructor(props) {
     super(props);
@@ -25,21 +31,21 @@ class Infoedit extends React.Component {
         this.setState({
           isAvailedPassword: '비밀번호는 8자 이상이어야 하며, 숫자/소문자를 모두 포함해야 합니다.',
         });
-      } else if (password === this.state.passwordCheck) {
+      } else if (hash(password) === this.state.passwordCheck) {
         console.log('password: ', password);
         this.setState({ isAvailedPassword: '이전 비밀번호와 동일합니다.' });
       } else {
         this.setState({ isAvailedPassword: '' });
-        this.setState({ [key]: e.target.value });
+        this.setState({ [key]: hash(e.target.value) });
       }
     }
     if (key === 'passwordCheck') {
-      var passwordCheck = e.target.value;
+      var passwordCheck = hash(e.target.value);
       if (passwordCheck.length > 0 && this.state.password !== passwordCheck) {
         this.setState({ isAvailedPasswordCheck: '비밀번호가 일치하지 않습니다.' });
       } else {
         this.setState({ isAvailedPasswordCheck: '' });
-        this.setState({ [key]: e.target.value });
+        this.setState({ [key]: passwordCheck });
       }
     }
     if (key === 'githubId') {
