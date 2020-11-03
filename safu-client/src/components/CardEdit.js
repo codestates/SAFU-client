@@ -3,6 +3,46 @@ import axios from 'axios';
 
 axios.defaults.withCredentials = true;
 
+function handleCardEdit(
+  comment,
+  bootcampname,
+  githublink,
+  level,
+  price,
+  curriculum,
+  recommend,
+  bootcampname_before,
+) {
+  axios({
+    method: 'put',
+    url: 'http://localhost:4000/reviews/edit',
+    data: {
+      comment: comment,
+      bootcampname: bootcampname,
+      githublink: githublink,
+      level: level,
+      price: price,
+      curriculum: curriculum,
+      recommend: recommend,
+      bootcampname_before: bootcampname_before,
+    },
+  }).then((req) => {
+    console.log(req.data);
+  });
+}
+
+function handleCardDelete(bootcampname) {
+  axios({
+    method: 'put',
+    url: 'http://localhost:4000/reviews/delete',
+    data: {
+      bootcampname: bootcampname,
+    },
+  }).then((req) => {
+    console.log(req.data);
+  });
+}
+
 function CardEdit(card) {
   const [bootcampname, setName] = useState(card.card.bootcampname.name);
   const [githublink, setgithublink] = useState(card.card.githublink);
@@ -16,7 +56,7 @@ function CardEdit(card) {
 
   useEffect(() => {
     axios({
-      method: 'post',
+      method: 'put',
       url: 'http://localhost:4000/reviews/edit',
       data: {
         comment: comment,
@@ -260,7 +300,42 @@ function CardEdit(card) {
             />
           </li>
           <li>
-            <button type="submit">summit</button>
+            <button
+              type="submit"
+              onClick={(e) => {
+                e.preventDefault();
+                {
+                  alert('리뷰를 수정하시겠습니까?');
+                  handleCardEdit(
+                    comment,
+                    bootcampname,
+                    githublink,
+                    level,
+                    price,
+                    curriculum,
+                    recommend,
+                    bootcampname_before,
+                  );
+                }
+                alert('수정이 완료되었습니다.');
+              }}
+            >
+              summit
+            </button>
+            <button
+              type="submit"
+              onClick={(e) => {
+                e.preventDefault();
+                {
+                  alert('리뷰를 삭제하시겠습니까?');
+                  handleCardDelete(bootcampname);
+                  alert('삭제가 완료되었습니다. ');
+                  window.location = '/Mypage';
+                }
+              }}
+            >
+              delete
+            </button>
           </li>
         </ul>
       </div>

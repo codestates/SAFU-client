@@ -48,7 +48,9 @@ class CardWrite extends React.Component {
                 this.props.history.push('/');
               })
               .catch((err) => {
-                alert('failed to create');
+                alert(
+                  '해당 부트캠프에 대한 리뷰는 이미 작성했습니다. my page 에서 리뷰를 수정할 수 있습니다.',
+                );
                 console.log(err);
               });
           }}
