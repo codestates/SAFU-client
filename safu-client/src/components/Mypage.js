@@ -36,14 +36,18 @@ function Mypage(props) {
             <button
               onClick={(e) => {
                 e.preventDefault();
-                props.history.push({
-                  pathname: '/Infoedit',
-                  userInfo: {
-                    email: users[0].email,
-                    password: users[0].password,
-                    githubId: users[0].githubId,
-                  },
-                });
+                if (!users[0].email) {
+                  alert('소셜로그인으로 가입하셨군요?  수정하실 이메일과 Github ID가 없습니다. ');
+                } else {
+                  props.history.push({
+                    pathname: '/Infoedit',
+                    userInfo: {
+                      email: users[0].email,
+                      password: users[0].password,
+                      githubId: users[0].githubId,
+                    },
+                  });
+                }
               }}
             >
               개인정보수정
