@@ -88,6 +88,10 @@ class SignUp extends React.Component {
         },
       })
         .then((res) => {
+          console.log(res);
+          if (res.data === 'already') {
+            alert('해당 githubId로 이미 가입되어 있습니다. 로그인 페이지로 이동하시겠습니까?');
+          }
           this.props.history.push('/Login');
         })
         .catch((err) => {
