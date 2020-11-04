@@ -22,9 +22,17 @@ class Findid extends React.Component {
       },
     })
       .then((res) => {
+        console.log(res);
         if (res.data !== null) {
-          alert('회원님의 email은 ' + res.data + ' 입니다. 로그인 페이지로 이동하시겠습니까?');
-          this.props.history.push('/Login');
+          if (res.data === 'social') {
+            alert(
+              '소셜로그인으로 가입하셨군요? 아이디찾기 기능을 사용할 수 없습니다. 로그인 페이지로 이동하시겠습니까?',
+            );
+            this.props.history.push('/Login');
+          } else {
+            alert('회원님의 email은 ' + res.data + ' 입니다. 로그인 페이지로 이동하시겠습니까?');
+            this.props.history.push('/Login');
+          }
         } else {
           alert('회원 정보가 존재하지 않습니다.');
         }
