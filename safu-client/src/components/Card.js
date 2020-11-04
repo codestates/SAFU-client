@@ -7,7 +7,7 @@ const Card = ({ card }) => (
       <li className="card-title">
         <p className="bootcamp-name">{card.bootcampname.name}</p>
         <a href={card.githublink}>{card.githublink}</a>
-        <p className="user-mail">{card.useremail.email}</p>
+        {/* <p className="user-mail">{card.useremail.email}</p> */}
       </li>
       <li className="level">
         <p>난이도</p>
