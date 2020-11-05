@@ -11,7 +11,7 @@
    
 # Development Stack :construction_worker: :wrench: :hammer:   
 ![GitHub message](https://img.shields.io/badge/STACK-FRONT-lightgrey?style=for-the-badge)
->![npm type definitions](https://img.shields.io/badge/Front--end-typescript-yellow?style=flat-square&logo=typescript)
+>![npm type definitions](https://img.shields.io/badge/Front--end-typescript-yellow?style=flat-square&logo=JAVAscript)
 ![npm type definitions](https://img.shields.io/badge/Front--end-react-blue?style=flat-square&logo=react)
 ![npm type definitions](https://img.shields.io/badge/Front--end-react--HOOK-blue?style=flat-square&logo=react)
 ![npm type definitions](https://img.shields.io/badge/Front--end-react--SELECT-blue?style=flat-square&logo=react)
