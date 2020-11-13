@@ -1,0 +1,611 @@
+body {
+  position: relative;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #564ac4;
+}
+button {
+  color: #6b5fd0;
+  border: 0px;
+  background: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 18px;
+  width: 100%;
+  height: 50px;
+  box-shadow: #bababa 0 0 15px;
+}
+
+/* navi isNotLogIn setting */
+.navi {
+  width: 100%;
+  height: 50px;
+  background-color: #313131;
+  text-align: center;
+}
+.navi .title {
+  display: inline-block;
+  margin-top: 8px;
+}
+.navi .title a {
+  color: white;
+  text-decoration: none;
+}
+.nav-ul {
+  position: absolute;
+  display: inline-block;
+  padding-top: 10px;
+  right: 0;
+}
+.nav-ul li {
+  font-size: 16px;
+  line-height: 1.5;
+  display: inline-block;
+  height: 25px;
+  margin-right: 15px;
+}
+.nav-ul li:first-child {
+  border-right: solid 1px white;
+  padding-right: 15px;
+}
+.nav-ul li a {
+  color: white;
+  text-decoration: none;
+}
+.nav-ul-login {
+  padding-top: 0;
+}
+.nav-ul-login li button {
+  color: white;
+  background: none;
+  font-size: 16px;
+  font-weight: 300;
+  box-shadow: none;
+}
+
+/* menu setting */
+.menu-body {
+  position: absolute;
+  width: 960px;
+  left: 50%;
+  padding-top: 30px;
+  margin-left: -480px;
+  text-align: center;
+}
+.bootcamp-list-slide-box {
+  /* white-space: nowrap;
+  overflow: auto; */
+  width: 810px;
+  position: absolute;
+  left: 0;
+  top: 30px;
+}
+.select-all-div {
+  padding-right: 20px;
+  float: left;
+  width: 100%;
+  height: 30px;
+  margin-top: 15px;
+  padding: 18px 0 25px 0;
+}
+.selectAll {
+  right: 0;
+  top: 280px;
+  position: absolute;
+  box-shadow: none !important;
+  margin-top: -50px !important;
+}
+.css-1rhbuit-multiValue {
+  background-color: white !important;
+}
+/* .bootcamp-list-slide-box::-webkit-scrollbar {
+  background-color: #e1e1e1;
+  border-radius: 5px;
+  height: 10px;
+  background-clip: padding-box;
+  border: 4px solid transparent;
+}
+
+.bootcamp-list-slide-box::-webkit-scrollbar-thumb {
+  opacity: 0.5;
+  border-radius: 5px;
+} */
+.menu-body input[type='checkbox'] {
+  white-space: nowrap;
+  overflow: auto;
+  width: 0px;
+}
+.bootcamp-div {
+  width: auto;
+  height: 30px;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 18px 0 25px 0;
+}
+.menu-body label {
+  border-radius: 15px;
+  padding: 13px;
+  margin: 0 15px;
+  color: #6b5fd0;
+  background: white;
+  font-size: 20px;
+  font-weight: 500;
+  box-shadow: #bababa 0 0 15px;
+}
+.menu-body label.selected {
+  color: white;
+  background: #6b5fd0;
+  border-radius: 15px;
+  box-shadow: none;
+}
+
+/* cardlist setting */
+.card-list {
+  width: 960px;
+  position: absolute;
+  left: 50%;
+  top: 400px;
+  margin-left: -480px;
+  margin-bottom: 50px;
+}
+.card-list-entry {
+  float: left;
+  border-radius: 30px;
+  height: 570px;
+  width: 300px;
+  margin: 10px 10px 25px 10px;
+  box-shadow: #bababa 0 0 15px;
+  background-position: center;
+}
+.card-list-entry.Code.States {
+  background-image: url(./images/CodeStates.jpg);
+}
+.card-list-entry.Fast.Campus {
+  background-image: url(./images/FastCampus.jpg);
+}
+.card-list-entry.Wecode {
+  background-image: url(./images/Wecode.jpg);
+}
+.card-list-entry.Vanilla.Coding {
+  background-image: url(./images/VanillaCoding.jpg);
+}
+.card-list-entry.Sparta.Codingclub {
+  background-image: url(./images/SpartaCodingclub.jpg);
+}
+.card-list-entry.Dream.Coding {
+  background-image: url(./images/DreamCoding.jpg);
+}
+.card-list-entry.Nomad.Coders {
+  background-image: url(./images/NomadCoders.jpg);
+}
+.card-list-entry.Code.Lion {
+  background-image: url(./images/CodeLion.jpg);
+}
+.add-card-div {
+  float: left;
+  border-radius: 30px;
+  height: 570px;
+  width: 300px;
+  margin: 10px;
+  box-shadow: #bababa 0 0 15px;
+}
+.add-card-div img {
+  margin-top: 75%;
+  padding: 25px;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: #bababa 0 0 15px;
+}
+
+/* card setting */
+ul.card {
+  overflow: auto;
+  height: 565px;
+  width: 300px;
+  position: relative;
+}
+ul.card::-webkit-scrollbar {
+  display: none;
+}
+ul.card li {
+  display: block;
+  background: white;
+  box-shadow: #bababa 0 0 15px;
+  border-radius: 20px;
+  margin: 10px 15px;
+  width: 270px;
+}
+ul.card li:first-child {
+  border-radius: 25px;
+}
+ul.card li:last-child p:last-child {
+  text-align: left;
+  margin-left: 15px;
+}
+ul.card li p:first-child {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  margin-left: 15px;
+  margin-top: 15px;
+  padding-top: 10px;
+  margin-bottom: -5px;
+}
+ul.card li p:last-child {
+  font-size: 18px;
+  text-align: right;
+  margin: 12px 15px 0 0;
+  padding-bottom: 10px;
+}
+.bootcamp-name {
+  font-size: 24px !important;
+}
+.card-title a {
+  width: 250px;
+  height: 17px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #6b5fd0;
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  text-align: right;
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-bottom: -18px;
+}
+.user-mail {
+  font-size: 15px !important;
+  margin-top: 20px !important;
+  margin-right: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+/* cardWrite setting */
+.add-card-plus {
+  width: 100px;
+  height: 100px;
+  border-radius: 25px;
+  color: #778899;
+  font-size: 90px;
+  line-height: 1;
+  top: 285px;
+  position: absolute;
+  margin: -55px 0px 0px -45px;
+}
+.card-write-div {
+  position: absolute;
+  width: 960px;
+  height: 100%;
+  top: 70px;
+  left: 50%;
+  margin-left: -480px;
+}
+.card-write ul {
+  width: 330px;
+  background-image: url(./images/cardBackgound.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: #bababa 0 0 15px;
+  border-radius: 30px;
+  padding: 15px 0 8px 0;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: 305px;
+  padding-top: 15px;
+}
+.card-write li {
+  background-color: white;
+  width: 280px;
+  display: block;
+  box-shadow: #bababa 0 0 15px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  margin-left: 25px;
+  padding-top: 5px;
+}
+.card-write li p {
+  margin: 5px 0;
+  font-weight: 600;
+}
+.card-write li input,
+select {
+  margin-top: 10px;
+  width: 250px;
+  margin-bottom: 15px;
+}
+.card-write ul button {
+  box-shadow: none;
+}
+
+/* signup setting */
+.signup-div {
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: 8%;
+}
+.signup-box li {
+  width: 300px;
+  display: block;
+  box-shadow: #bababa 0 0 15px;
+  border-radius: 25px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  height: 100%;
+}
+.signup-box li input {
+  width: 270px;
+}
+.signup-box li div {
+  width: 280px;
+}
+.signup-box li div:first-child {
+  padding-top: 10px;
+  margin-bottom: 12px;
+}
+.signup-box li div:last-child {
+  color: rgb(218, 74, 74);
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.signup-box li div:first-child {
+  padding-top: 10px;
+  margin-bottom: 12px;
+  text-align: left;
+  padding-left: 20px;
+  width: 100%;
+}
+
+/* login setting */
+.login-div {
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: 8%;
+}
+.login-box li {
+  width: 300px;
+  display: block;
+  box-shadow: #bababa 0 0 15px;
+  border-radius: 25px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  height: 100%;
+}
+.login-box li input {
+  width: 270px;
+}
+.login-box li div:first-child {
+  padding-top: 10px;
+  margin-bottom: 12px;
+  text-align: left;
+  padding-left: 20px;
+  width: 100%;
+}
+.social-login-div {
+  margin: 15px 0;
+  color: #6b5fd0;
+  background: white;
+  border-radius: 15px;
+  font-size: 18px;
+  box-shadow: none;
+  width: 100%;
+  font-weight: 600;
+  border-radius: 18px;
+  height: 35px;
+  box-shadow: #bababa 0 0 15px;
+  padding-top: 15px;
+}
+.social-login-div a {
+  text-decoration: none;
+}
+.find-div {
+  margin-bottom: 25px;
+}
+.find-div button {
+  width: 143px;
+  margin-right: 14px;
+}
+.find-div button:last-child {
+  margin-right: 0;
+}
+.go-to-signup-div button {
+  color: #6b5fd0;
+  border: none;
+  background: white;
+  border-radius: 15px;
+  font-size: 18px;
+  box-shadow: #bababa 0 0 15px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* findId setting */
+.findId-div {
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: 8%;
+}
+.findId-box li {
+  width: 300px;
+  display: block;
+  box-shadow: #bababa 0 0 15px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  height: 100%;
+  padding-bottom: 15px;
+}
+.findId-box li div:first-child {
+  padding-top: 10px;
+  margin-bottom: 12px;
+}
+
+/* findPW setting */
+.findPW-div {
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: 8%;
+}
+.findPW-box li {
+  width: 300px;
+  display: block;
+  box-shadow: #bababa 0 0 15px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  height: 100%;
+  padding-bottom: 15px;
+}
+.findPW-box li div:first-child {
+  padding-top: 10px;
+  margin-bottom: 12px;
+}
+
+/* cardEdit setting */
+.cardEdit-list {
+  position: relative;
+  width: 990px;
+  left: 50%;
+  top: 50px;
+  margin-left: -495px;
+  margin-bottom: 50px;
+}
+.cardEdit-list-before-message {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.cardEdit-list-div {
+  float: left;
+  border-radius: 30px;
+  width: 300px;
+  margin: 10px 15px 25px 15px;
+  box-shadow: #bababa 0 0 15px;
+  background-image: url(./images/cardBackgound.jpg);
+  padding: 15px 0 8px 0;
+  background-size: cover;
+}
+.cardEdit {
+  position: relative;
+  width: 270px;
+}
+
+.cardEdit li {
+  background-color: white;
+  width: 280px;
+  display: block;
+  box-shadow: #bababa 0 0 15px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding-top: 5px;
+}
+.cardEdit li p {
+  margin: 5px 0;
+  font-weight: 600;
+}
+.cardEdit li input,
+select {
+  margin-top: 10px;
+  width: 250px;
+  margin-bottom: 15px;
+}
+.cardEdit li:last-child {
+  background: none;
+  box-shadow: none;
+}
+.cardEdit button {
+  box-shadow: #bababa 0 0 15px !important;
+  width: 270px;
+}
+.cardEdit button:first-child {
+  margin-bottom: 15px;
+}
+.cardEdit button:last-child {
+  position: absolute;
+  z-index: 10;
+  background-color: rgb(196, 67, 67);
+  font-size: 0px;
+  width: 35px;
+  height: 35px;
+  top: -25px;
+  right: -40px;
+}
+.cardEdit button:last-child:before {
+  content: 'X';
+  font-size: 15px;
+  color: white;
+  display: block;
+}
+
+/* mypage setting */
+.mypage-div {
+  position: absolute;
+  width: 960px;
+  height: 100%;
+  top: 70px;
+  left: 50%;
+  margin-left: -480px;
+}
+.mypage-ul {
+  width: 300px;
+  height: 250px;
+  background-image: url(./images/gray.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: #bababa 0 0 15px;
+  border-radius: 30px;
+  padding: 15px 0 8px 0;
+  margin-top: 30px;
+  margin-left: 330px;
+  padding-top: 15px;
+}
+.mypage-li {
+  background-color: white;
+  width: 280px;
+  display: block;
+  box-shadow: #bababa 0 0 15px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  margin-left: 10px;
+  padding-top: 5px;
+}
+.mypage-li:first-child {
+  margin-top: 5px;
+}
+.mypage-li p:first-child {
+  margin: 5px 15px;
+  text-align: left;
+}
+.mypage-li p:last-child {
+  margin: 5px 15px;
+  padding-bottom: 10px;
+  text-align: right;
+}
+.mypage-div ul button {
+  box-shadow: none;
+}
+
+/* footer logo setting */
+.fontType-logo {
+  position: absolute;
+  bottom: -100px;
+  width: 160px;
+  height: 80px;
+  background-image: url(./images/fontType_logo.png);
+  background-size: cover;
+  left: 50%;
+  margin-left: -80px;
+  margin-bottom: 25px;
+}
