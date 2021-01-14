@@ -16,13 +16,12 @@ class Findid extends React.Component {
   handleFindIdButton = () => {
     axios({
       method: 'post',
-      url: 'http://localhost:4000/users/login/findId',
+      url: 'https://www.safu4u.ml/users/login/findId',
       data: {
         githubId: this.githubId,
       },
     })
       .then((res) => {
-        console.log(res);
         if (res.data !== null) {
           if (res.data === 'social') {
             alert(

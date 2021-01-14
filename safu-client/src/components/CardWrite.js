@@ -21,7 +21,7 @@ class CardWrite extends React.Component {
     this.handleInputValue = this.handleInputValue.bind(this);
     axios({
       method: 'get',
-      url: 'http://localhost:4000/bootcamplists',
+      url: 'https://www.safu4u.ml/bootcamplists',
     })
       .then((datas) => {
         const map1 = datas.data.map((x) => x.name);
@@ -43,7 +43,7 @@ class CardWrite extends React.Component {
           onSubmit={(e) => {
             e.preventDefault();
             axios
-              .post('http://localhost:4000/reviews/create', this.state)
+              .post('https://www.safu4u.ml/reviews/create', this.state)
               .then((res) => {
                 this.props.history.push('/');
               })
