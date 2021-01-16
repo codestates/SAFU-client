@@ -16,7 +16,7 @@
 ![npm type definitions](https://img.shields.io/badge/Front--end-react--HOOK-blue?style=flat-square&logo=react)
 ![npm type definitions](https://img.shields.io/badge/Front--end-react--SELECT-blue?style=flat-square&logo=react)
 ![npm type definitions](https://img.shields.io/badge/Front--end-react--router-red?style=flat-square&logo=react-router)
-![npm type definitions](https://img.shields.io/badge/Back--end-S3-orange?style=flat-square&logo=amazon-aws)
+![npm type definitions](https://img.shields.io/badge/Front--end-S3-orange?style=flat-square&logo=amazon-aws)
    
 ![GitHub message](https://img.shields.io/badge/STACK-BACK-lightgrey?style=for-the-badge)
 >![npm type definitions](https://img.shields.io/badge/Back--end-node.js-green?style=flat-square&logo=node.js)
