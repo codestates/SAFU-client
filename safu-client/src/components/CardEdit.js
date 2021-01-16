@@ -15,7 +15,7 @@ function handleCardEdit(
 ) {
   axios({
     method: 'put',
-    url: 'http://localhost:4000/reviews/edit',
+    url: 'https://www.safu4u.ml/reviews/edit',
     data: {
       comment: comment,
       bootcampname: bootcampname,
@@ -44,12 +44,10 @@ function handleCardEdit(
 function handleCardDelete(bootcampname) {
   axios({
     method: 'put',
-    url: 'http://localhost:4000/reviews/delete',
+    url: 'https://www.safu4u.ml/reviews/delete',
     data: {
       bootcampname: bootcampname,
     },
-  }).then((req) => {
-    console.log(req.data);
   });
 }
 
@@ -67,7 +65,7 @@ function CardEdit(card) {
   useEffect(() => {
     axios({
       method: 'put',
-      url: 'http://localhost:4000/reviews/edit',
+      url: 'https://www.safu4u.ml/reviews/edit',
       data: {
         comment: comment,
         bootcampname: bootcampname,
@@ -78,15 +76,13 @@ function CardEdit(card) {
         recommend: recommend,
         bootcampname_before: bootcampname_before,
       },
-    }).then((req) => {
-      console.log(req.data);
     });
   }, []);
 
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:4000/bootcamplists',
+      url: 'https://www.safu4u.ml/bootcamplists',
     })
       .then((datas) => {
         const map1 = datas.data.map((x) => x.name);
@@ -357,7 +353,7 @@ function CardEdit(card) {
 //   onSubmit={(e) => {
 //     e.preventDefault();
 //     axios // 서버와 연결하면서 활성화
-//       .post('http://localhost:4000/reviews/edit', this.state)
+//       .post('https://www.safu4u.ml/reviews/edit', this.state)
 //       .then((res) => {
 //         this.props.history.push('/review/edit');
 //       })

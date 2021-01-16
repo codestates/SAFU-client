@@ -11,9 +11,8 @@ function Mypage(props) {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:4000/users/read',
+      url: 'https://www.safu4u.ml/users/read',
     }).then((users) => {
-      console.log('mypage 정보 받아와!', users.data);
       setUsers(users.data);
       setLoading(false);
     });
@@ -23,7 +22,6 @@ function Mypage(props) {
     <div className="mypage-div">
       <ul className="mypage-ul">
         <li className="mypage-email mypage-li">
-          {console.log('users', users[0])}
           <p>E-mail</p>
           <p>{users[0].email}</p>
         </li>

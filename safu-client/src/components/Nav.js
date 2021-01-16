@@ -10,11 +10,8 @@ class Nav extends React.Component {
   handleLogoutButton = () => {
     axios({
       method: 'post',
-      url: 'http://localhost:4000/users/logout',
+      url: 'https://www.safu4u.ml/users/logout',
     })
-      .then((res) => {
-        console.log('로그아웃 완료');
-      })
       .then(() => {
         window.location = '/';
       })

@@ -12,7 +12,7 @@ const Menu = ({ onChangeCheckbox, onChange, checked, values }) => {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:4000/bootcamplists',
+      url: 'https://www.safu4u.ml/bootcamplists',
     }).then((datas) => {
       var bootcampOptions = [];
       datas.data.forEach((x) => {

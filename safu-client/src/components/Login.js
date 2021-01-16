@@ -20,7 +20,7 @@ class Login extends React.Component {
   handleLoginButton = () => {
     axios({
       method: 'post',
-      url: 'http://localhost:4000/users/login',
+      url: 'https://www.safu4u.ml/users/login',
       data: {
         useremail: this.state.useremail,
         password: this.state.password,
@@ -66,7 +66,7 @@ class Login extends React.Component {
           </button>
         </div>
         <div className="social-login-div">
-          <a href={'http://localhost:4000/auth/github'}>Log in with Github</a>
+          <a href={'https://www.safu4u.ml/auth/github'}>Log in with Github</a>
         </div>
         <div className="find-div">
           <ul>

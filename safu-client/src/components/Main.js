@@ -20,7 +20,7 @@ class App extends React.Component {
     this.bootcampOptions = [];
     axios({
       method: 'get',
-      url: 'http://localhost:4000/bootcamplists',
+      url: 'https://www.safu4u.ml/bootcamplists',
     })
       .then((datas) => {
         datas.data.forEach((x) => {
@@ -30,7 +30,7 @@ class App extends React.Component {
       .then(() => {
         axios({
           method: 'post',
-          url: 'http://localhost:4000/reviews',
+          url: 'https://www.safu4u.ml/reviews',
           data: {
             bootcampList: this.bootcampOptions,
           },
@@ -64,10 +64,9 @@ class App extends React.Component {
       checked: isChecked,
       values: addValue,
     });
-    console.log('addValue', addValue);
     axios({
       method: 'post',
-      url: 'http://localhost:4000/reviews',
+      url: 'https://www.safu4u.ml/reviews',
       data: {
         bootcampList: addValue,
       },
@@ -78,7 +77,6 @@ class App extends React.Component {
         } else {
           this.setState({ userInfo: res.data });
         }
-        console.log('axios', res.data);
       })
       .catch((err) => {
         console.error(err);
@@ -95,7 +93,7 @@ class App extends React.Component {
     addValue = addValue === null ? this.bootcampOptions : addValue;
     axios({
       method: 'post',
-      url: 'http://localhost:4000/reviews',
+      url: 'https://www.safu4u.ml/reviews',
       data: {
         bootcampList: addValue,
       },
@@ -106,7 +104,6 @@ class App extends React.Component {
         } else {
           this.setState({ userInfo: res.data });
         }
-        console.log('axios2', res.data);
       })
       .catch((err) => {
         console.error(err);
@@ -123,7 +120,6 @@ class App extends React.Component {
             checked={this.state.checked}
             values={this.state.values}
           />
-          {/* {console.log('Menu state: ', this.state.values)}  잘 나옴. state 끌어올리기 잘 됨. */}
           <CardList isLogin={this.state.isLogin} userInfo={this.state.userInfo} />
         </div>
       </div>

@@ -19,7 +19,7 @@ class Findpw extends React.Component {
   handleFindPwButton = () => {
     axios({
       method: 'post',
-      url: 'http://localhost:4000/users/login/findpw',
+      url: 'https://www.safu4u.ml/users/login/findpw',
       data: {
         useremail: this.useremail,
         githubId: this.githubId,
