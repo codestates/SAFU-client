@@ -8,10 +8,12 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [options, setOptions] = useState([]);
 
+  console.log('Welcom to SAFU!');
+
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:4000/bootcamplists',
+      url: 'https://www.safu4u.ml/bootcamplists',
     }).then((datas) => {
       var bootcampOptions = [];
       datas.data.forEach((x) => {
@@ -24,13 +26,12 @@ function App() {
   useEffect(() => {
     axios({
       method: 'post',
-      url: 'http://localhost:4000/reviews',
+      url: 'https://www.safu4u.ml/reviews',
       data: {
         bootcampList: options,
       },
     })
       .then((res) => {
-        console.log(res);
         if (res.data[1] !== undefined && res.data[1].isLogin === true) {
           setIsLogin(true);
         }

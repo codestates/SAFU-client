@@ -13,13 +13,12 @@ function Menu() {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:4000/bootcamplists',
+      url: 'https://www.safu4u.ml/bootcamplists',
     }).then((users) => {
       setBootcampList(users.data);
     });
   }, []);
 
-  console.log();
   return (
     <div className="menu-body">
       <div className="logo">

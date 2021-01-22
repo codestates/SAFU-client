@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
 
-import safuLogo from '../images/safu_logo.png';
+import safuLogo from '../images/fontType_logo.png';
 
 axios.defaults.withCredentials = true;
 
@@ -12,7 +12,7 @@ const Menu = ({ onChangeCheckbox, onChange, checked, values }) => {
   useEffect(() => {
     axios({
       method: 'get',
-      url: 'http://localhost:4000/bootcamplists',
+      url: 'https://www.safu4u.ml/bootcamplists',
     }).then((datas) => {
       var bootcampOptions = [];
       datas.data.forEach((x) => {
@@ -26,7 +26,7 @@ const Menu = ({ onChangeCheckbox, onChange, checked, values }) => {
     <div className="menu-body">
       <div className="logo">
         <a href="/">
-          <img src={safuLogo} width="120px" height="120px" />
+          <img src={safuLogo} width="160px" height="80px" />
         </a>
         <p>당신에게 가장 잘 맞는 부트캠프는 어디일까요?</p>
       </div>

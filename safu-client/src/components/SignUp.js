@@ -28,7 +28,7 @@ class SignUp extends React.Component {
         this.setState({ isAvailedEmail: '' });
         axios({
           method: 'post',
-          url: 'http://localhost:4000/users/signup/checkId',
+          url: 'https://www.safu4u.ml/users/signup/checkId',
           data: {
             useremail: e.target.value,
           },
@@ -80,7 +80,7 @@ class SignUp extends React.Component {
     ) {
       axios({
         method: 'post',
-        url: 'http://localhost:4000/users/signup',
+        url: 'https://www.safu4u.ml/users/signup',
         data: {
           useremail: this.state.useremail,
           password: this.state.password,
@@ -88,7 +88,6 @@ class SignUp extends React.Component {
         },
       })
         .then((res) => {
-          console.log(res);
           if (res.data === 'already') {
             alert('해당 githubId로 이미 가입되어 있습니다. 로그인 페이지로 이동하시겠습니까?');
           }

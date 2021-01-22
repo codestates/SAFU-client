@@ -50,6 +50,7 @@ button {
   line-height: 1.5;
   display: inline-block;
   height: 25px;
+  width: 70px;
   margin-right: 15px;
 }
 .nav-ul li:first-child {
@@ -60,15 +61,13 @@ button {
   color: white;
   text-decoration: none;
 }
-.nav-ul-login {
-  padding-top: 0;
-}
 .nav-ul-login li button {
   color: white;
   background: none;
   font-size: 16px;
   font-weight: 300;
   box-shadow: none;
+  height: 25px;
 }
 
 /* menu setting */
@@ -85,23 +84,14 @@ button {
   overflow: auto; */
   width: 810px;
   position: absolute;
-  left: 0;
+  left: 15px;
   top: 30px;
 }
-.select-all-div {
-  padding-right: 20px;
-  float: left;
-  width: 100%;
-  height: 30px;
-  margin-top: 15px;
-  padding: 18px 0 25px 0;
-}
 .selectAll {
-  right: 0;
-  top: 280px;
+  right: -10px;
   position: absolute;
   box-shadow: none !important;
-  margin-top: -50px !important;
+  margin-top: -45px !important;
 }
 .css-1rhbuit-multiValue {
   background-color: white !important;
@@ -152,9 +142,9 @@ button {
   width: 960px;
   position: absolute;
   left: 50%;
-  top: 400px;
+  top: 340px;
   margin-left: -480px;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 .card-list-entry {
   float: left;
@@ -595,17 +585,4 @@ select {
 }
 .mypage-div ul button {
   box-shadow: none;
-}
-
-/* footer logo setting */
-.fontType-logo {
-  position: absolute;
-  bottom: -100px;
-  width: 160px;
-  height: 80px;
-  background-image: url(./images/fontType_logo.png);
-  background-size: cover;
-  left: 50%;
-  margin-left: -80px;
-  margin-bottom: 25px;
 }

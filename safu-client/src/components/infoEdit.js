@@ -32,7 +32,6 @@ class Infoedit extends React.Component {
           isAvailedPassword: '비밀번호는 8자 이상이어야 하며, 숫자/소문자를 모두 포함해야 합니다.',
         });
       } else if (hash(password) === this.state.passwordCheck) {
-        console.log('password: ', password);
         this.setState({ isAvailedPassword: '이전 비밀번호와 동일합니다.' });
       } else {
         this.setState({ isAvailedPassword: '' });
@@ -57,7 +56,7 @@ class Infoedit extends React.Component {
     if (this.state.isAvailedPassword === '' && this.state.isAvailedPasswordCheck === '') {
       axios({
         method: 'put',
-        url: 'http://localhost:4000/users/edit',
+        url: 'https://www.safu4u.ml/users/edit',
         data: {
           useremail: this.state.useremail,
           password: this.state.password,
@@ -66,7 +65,6 @@ class Infoedit extends React.Component {
       })
         .then((res) => {
           window.location = '/Login';
-          console.log('개인정보수정 완료');
         })
         .catch((err) => {
           console.error(err);
@@ -79,7 +77,7 @@ class Infoedit extends React.Component {
   handleDeactivateButton = () => {
     axios({
       method: 'delete',
-      url: 'http://localhost:4000/users/edit/delete',
+      url: 'https://www.safu4u.ml/users/edit/delete',
     })
       .then((res) => {
         alert('안전하게 탈퇴처리되었습니다.');
